@@ -1,0 +1,62 @@
+/* -------------------------------------------- */
+/*                Contact Us Page               */
+/* -------------------------------------------- */
+
+/* ------------------ Layout ------------------ */
+
+.contact-us-areas {
+  display: grid;
+  gap: 65px;
+}
+
+.contact-us-areas > section {
+  padding: 20px clamp(15px, 5vw, 60px);
+  border: var(--bd-blue);
+  border-radius: var(--bd-radius);
+}
+
+.contact-us-description {
+  max-width: 450px;
+  margin-block: 15px 30px;
+}
+
+.quick-contact textarea {
+  min-height: 120px;
+}
+
+.quick-contact .cta {
+  max-width: none;
+}
+
+/* ------------------- Lists ------------------ */
+
+.contact-us-areas li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-list .icon {
+  max-width: 100%;
+}
+
+address {
+  font-style: normal;
+}
+
+address strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.connect-icons .icon {
+  transition: transform var(--tr-link);
+}
+
+.connect-icons a:hover > .icon {
+  transform: scale(1.05);
+}

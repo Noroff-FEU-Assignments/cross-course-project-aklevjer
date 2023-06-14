@@ -1,0 +1,179 @@
+/* -------------------------------------------- */
+/*                 Checkout Page                */
+/* -------------------------------------------- */
+
+/* --------- Checkout Stages / Layout --------- */
+
+.checkout-stages {
+  display: grid;
+  gap: 65px;
+}
+
+.shipping-info-wrapper,
+.payment-method-wrapper,
+.order-summary-wrapper,
+.order-review-wrapper {
+  border: var(--bd-blue);
+  border-radius: var(--bd-radius);
+}
+
+.shipping-info-wrapper > form,
+.payment-method-wrapper > form {
+  padding: 10px clamp(15px, 5vw, 60px) 25px;
+}
+
+fieldset {
+  margin-top: 15px;
+  border: none;
+}
+
+.input-row-wrapper {
+  display: flex;
+  gap: 25px;
+}
+
+.input-row-wrapper > div {
+  flex: 1;
+}
+
+/* ---------------- Typography ---------------- */
+
+.checkout-stages h2,
+legend {
+  margin-bottom: 15px;
+}
+
+.checkout-stages h3 {
+  font-size: var(--fs-normal);
+}
+
+legend {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-bold);
+}
+
+/* --------------- Radio Buttons -------------- */
+
+.payment-methods > div,
+.payment-methods label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.payment-methods input[type="radio"] {
+  width: auto;
+  margin: 10px 0;
+}
+
+/* --------------- Cart Product --------------- */
+
+.cart-product,
+.cart-product-info,
+.quantity-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.cart-product img {
+  max-width: 100px;
+}
+
+.cart-product-info {
+  flex-direction: column;
+}
+
+.cart-product-info .in-stock {
+  font-weight: var(--fw-semi-bold);
+}
+
+.quantity-controls {
+  width: fit-content;
+  padding: 1px;
+  align-items: center;
+  border: var(--bd-blue);
+  border-radius: 15px;
+}
+
+/* ------------- Tables / Styling ------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.order-review-table thead,
+.order-review-table tbody,
+.order-summary-table tr:first-child {
+  border-bottom: var(--bd-blue);
+}
+
+.order-review-table tfoot td,
+.order-summary-table td:last-child {
+  text-align: right;
+}
+
+.order-summary-wrapper {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.order-summary-wrapper .cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 15px 60px;
+}
+
+/* ------------ Order Review Mobile ----------- */
+
+.order-review-table thead th:not(:first-child) {
+  display: none;
+}
+
+.order-review-table tbody tr {
+  display: grid;
+  grid-template-areas:
+    "cart-product cart-product del-button"
+    "unisex quantity-controls price";
+  align-items: center;
+  justify-items: center;
+}
+
+.order-review-table tbody td:nth-child(1) {
+  grid-area: cart-product;
+  justify-self: start;
+}
+
+.order-review-table tbody td:nth-child(2) {
+  grid-area: unisex;
+}
+
+.order-review-table tbody td:nth-child(3) {
+  grid-area: quantity-controls;
+}
+
+.order-review-table tbody td:nth-child(4) {
+  grid-area: price;
+}
+
+.order-review-table tbody td:nth-child(5) {
+  grid-area: del-button;
+  justify-self: end;
+}
+
+.order-review-table tbody td:not(:first-child, :last-child)::before {
+  display: block;
+  content: attr(data-label); /* Inspiration: https://css-tricks.com/css-attr-function-got-nothin-custom-properties/ */
+  font-weight: var(--fw-bold);
+  padding-bottom: 23px;
+}
+
+.order-review-table tbody td:nth-child(3)::before {
+  padding-bottom: 10px;
+}

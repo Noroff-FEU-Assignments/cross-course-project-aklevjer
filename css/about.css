@@ -1,0 +1,30 @@
+/* -------------------------------------------- */
+/*                 About Us Page                */
+/* -------------------------------------------- */
+
+/* ------------ Who we are / Why us ----------- */
+
+.who-we-are,
+.why-us {
+  display: grid;
+  gap: 30px;
+}
+
+.who-we-are {
+  margin-bottom: 70px;
+}
+
+.about-us-content :not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.about-us-content h2 {
+  padding-bottom: 5px;
+  font-weight: var(--fw-medium);
+  text-transform: none;
+  border-bottom: var(--bd-blue);
+}
+
+.about-us-content h2 span {
+  font-weight: var(--fw-bold);
+}

@@ -1,0 +1,414 @@
+/* -------------------------------------------- */
+/*                    Initial                   */
+/* -------------------------------------------- */
+
+@import "imports/variables.css";
+@import "imports/links.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font-family: "Montserrat", Helvetica, Verdana, sans-serif;
+}
+
+/* -------------------------------------------- */
+/*                Global Elements               */
+/* -------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+legend,
+strong {
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+p {
+  line-height: 1.4;
+  hyphens: auto;
+}
+
+label {
+  font-weight: var(--fw-medium);
+}
+
+strong {
+  font-size: var(--fs-medium);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img:not(.icon) {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--bd-radius);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-block: 5px 25px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: var(--fs-normal);
+  border: var(--bd-blue);
+  border-radius: var(--bd-radius);
+  outline-color: var(--clr-blue);
+}
+
+/* -------------------------------------------- */
+/*                Global Classes                */
+/* -------------------------------------------- */
+
+/* Max width container
+ Inspiration: https://www.youtube.com/watch?v=wBKT2KN_Y9s&t=155s */
+
+.maxw-container {
+  width: min(var(--maxw-page), calc(100% - var(--minm-page)));
+  margin-inline: auto;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none;
+}
+
+.p-large {
+  font-size: var(--fs-large);
+}
+
+.required-field {
+  color: var(--clr-red);
+}
+
+.in-stock {
+  color: var(--clr-green);
+}
+
+/* -------------------------------------------- */
+/*                    Header                    */
+/* -------------------------------------------- */
+
+header {
+  position: fixed;
+  width: 100%;
+  min-height: var(--hgt-header);
+  z-index: 1;
+  background-color: var(--clr-blue);
+}
+
+.header-container {
+  padding-block: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  margin-right: auto;
+}
+
+/* -------------------------------------------- */
+/*              Navigation and Cart             */
+/* -------------------------------------------- */
+
+/* Checkbox hack drop-down menu
+Inspiration: https://codepen.io/alvarotrigo/pen/MWEJEWG */
+
+.header-nav {
+  position: absolute;
+  top: var(--hgt-header);
+  left: 0;
+  width: 100%;
+  box-shadow: 0 75px 100px var(--clr-dark-shadow);
+  background-color: var(--clr-blue);
+}
+
+.header-nav li {
+  height: 0;
+  line-height: 40px;
+  text-align: center;
+  overflow: hidden;
+  transition: height var(--tr-dropdown);
+}
+
+.header-nav a {
+  display: block;
+}
+
+#burger-toggle:checked ~ .header-nav li {
+  height: 40px;
+  overflow: visible;
+}
+
+#burger-toggle:checked ~ .header-nav li:last-child {
+  margin-bottom: 10px;
+}
+
+.burger-icon {
+  order: 3;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.shopping-cart {
+  margin-inline: 20px;
+  padding: 5px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  border: var(--bd-white);
+  border-radius: var(--bd-radius);
+}
+
+/* -------------------------------------------- */
+/*                     Main                     */
+/* -------------------------------------------- */
+
+main {
+  margin-top: var(--hgt-header);
+  padding-bottom: 100px;
+}
+
+main > :not(:last-child) {
+  margin-bottom: 60px;
+}
+
+/* -------------------------------------------- */
+/*                  Breadcrumbs                 */
+/* -------------------------------------------- */
+
+.breadcrumbs {
+  margin-top: 40px;
+  padding-bottom: 5px;
+  border-bottom: var(--bd-blue);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumbs li:not(:first-child)::before {
+  margin-inline: clamp(5px, 1.5vw, 10px);
+  content: "\276F";
+  color: var(--clr-blue);
+}
+
+/* -------------------------------------------- */
+/*                    Footer                    */
+/* -------------------------------------------- */
+
+/* ------------------ Layout ------------------ */
+
+footer {
+  color: var(--clr-white);
+  background: var(--clr-blue) url("../images/graphics/mountain_background_large.svg") no-repeat bottom;
+}
+
+.footer-top,
+.footer-bottom {
+  display: flex;
+}
+
+.footer-top {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-top > div {
+  border-bottom: var(--bd-blue-grey);
+}
+
+.footer-bottom {
+  padding-block: 15px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------- Accordions ---------------- */
+
+.accordion-header {
+  padding-block: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-bold);
+  text-transform: capitalize;
+}
+
+.accordion-arrow {
+  padding-inline: 5px;
+  font-size: var(--fs-xxlarge);
+  transform: rotate(90deg);
+  transition: transform var(--tr-accordion);
+}
+
+.footer-nav,
+.footer-icons,
+.newsletter {
+  height: 0;
+  overflow: hidden;
+  transition: height var(--tr-accordion);
+}
+
+/*  Toggle states - initial height + 20px  */
+
+#quick-links-toggle:checked ~ .footer-nav {
+  height: calc(106px + 20px);
+}
+
+#socials-toggle:checked ~ .footer-icons {
+  height: calc(95px + 20px);
+}
+
+#newsletter-toggle:checked ~ .newsletter {
+  height: calc(101px + 20px);
+}
+
+#quick-links-toggle:checked ~ .footer-nav,
+#socials-toggle:checked ~ .footer-icons,
+#newsletter-toggle:checked ~ .newsletter {
+  overflow: visible;
+  animation: delay-overflow 500ms;
+}
+
+#quick-links-toggle:checked ~ .accordion-header .accordion-arrow,
+#socials-toggle:checked ~ .accordion-header .accordion-arrow,
+#newsletter-toggle:checked ~ .accordion-header .accordion-arrow {
+  transform: rotate(270deg);
+}
+
+/* Delayed overflow animation to prevent instant visibility on transition
+Inspiration: https://stackoverflow.com/a/41221543 */
+
+@keyframes delay-overflow {
+  from {
+    overflow: hidden;
+  }
+}
+
+/* ------------ Sections / Elements ----------- */
+
+.footer-logo {
+  display: block;
+  max-width: 215px;
+  margin-inline: auto;
+  padding-block: 25px;
+}
+
+.links-list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-icons .icon {
+  box-shadow: inset 0 0 0 1px var(--clr-white);
+  border-radius: 50%;
+  transition: box-shadow var(--tr-link);
+}
+
+.footer-icons a:hover > .icon {
+  box-shadow: inset 0 0 0 2px var(--clr-white);
+}
+
+.newsletter p {
+  max-width: 300px;
+  margin-bottom: 15px;
+}
+
+.newsletter form {
+  display: flex;
+}
+
+.newsletter input {
+  margin: 0;
+}
+
+.newsletter input[type="email"] {
+  max-width: fit-content;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.newsletter input[type="submit"] {
+  border: var(--bd-white);
+  border-radius: 0 5px 5px 0;
+  background-color: var(--clr-dark-blue);
+}
+
+.newsletter input[type="submit"]:hover {
+  background-color: var(--clr-darker-blue);
+}
+
+.payment-icons {
+  display: none;
+}
+
+/* -------------------------------------------- */
+/*           Bestsellers and Shop Page          */
+/* -------------------------------------------- */
+
+.product-container {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  color: var(--clr-black);
+  border: var(--bd-blue);
+  border-radius: var(--bd-radius);
+  transition-property: box-shadow;
+}
+
+.product-container:hover {
+  box-shadow: 0 0 0 2px var(--clr-blue);
+}
+
+.product-container :not(:first-child) {
+  margin: 5px;
+}
+
+.product-container h2,
+.product-container h5,
+.product-container span {
+  font-size: var(--fs-medium);
+}
+
+/* Truncate product descriptions
+Inspiration: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp */
+
+.product-container p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: var(--fw-normal);
+}

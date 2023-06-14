@@ -1,0 +1,162 @@
+/* -------------------------------------------- */
+/*                   Home Page                  */
+/* -------------------------------------------- */
+
+/* ------------------- Hero ------------------- */
+
+.hero,
+.hero-left {
+  display: flex;
+}
+
+.hero {
+  min-height: 500px;
+  flex-direction: column-reverse;
+}
+
+.hero-left {
+  justify-content: center;
+  color: var(--clr-white);
+  background: var(--clr-light-blue) url("../images/graphics/mountain_background_medium.svg") no-repeat left bottom;
+  background-size: 25%;
+}
+
+.hero-content {
+  margin: 40px 20px 50px;
+}
+
+.hero-content p {
+  max-width: 420px;
+  margin-block: 10px 20px;
+}
+
+.hero-right {
+  position: relative;
+  max-height: 250px;
+}
+
+.hero-image {
+  height: 250px;
+  border-radius: 0 !important;
+}
+
+.mountain-mask {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 250px;
+  height: 191px;
+  transform: translateX(-50%) rotate(-90deg);
+  background: url("../images/graphics/mountain_mask.svg") no-repeat;
+  background-size: contain;
+}
+
+/* ------------- Collection Cards ------------- */
+
+.collection-cards,
+.collection-container,
+.collection-content {
+  display: flex;
+}
+.collection-cards,
+.collection-content {
+  flex-direction: column;
+  gap: 50px;
+}
+
+.collection-container,
+.collection-container img {
+  height: 300px;
+}
+
+.collection-container {
+  width: 100%;
+  border-radius: var(--bd-radius);
+  background-color: var(--clr-light-blue);
+}
+
+.collection-image-men {
+  object-position: 30%;
+}
+
+.collection-image-women {
+  object-position: 65%;
+}
+
+.collection-content {
+  flex: 1 1 400px;
+  min-width: 200px;
+  padding-inline: 15px;
+  gap: 15px;
+  justify-content: center;
+  color: var(--clr-white);
+}
+
+/* ---------------- Sale Banner --------------- */
+
+.sale-banner {
+  padding: 0 15px 30px;
+  gap: 10px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--bd-radius);
+  color: var(--clr-white);
+  background: var(--clr-light-blue) url("../images/graphics/mountain_background_small.svg") no-repeat right bottom;
+  background-size: 108px;
+}
+
+.sale-banner-image {
+  max-width: 300px;
+}
+
+.sale-banner-content h3 {
+  font-size: var(--fs-xxlarge);
+  text-align: center;
+}
+
+.sale-banner-content p {
+  margin-block: 10px 20px;
+  max-width: 430px;
+}
+
+/* --------------- Best Sellers --------------- */
+
+.bestsellers h4 {
+  font-size: var(--fs-xlarge);
+  padding-bottom: 10px;
+  border-bottom: var(--bd-blue);
+}
+
+.bestsellers-products {
+  position: relative;
+  margin-block: 40px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+}
+
+.bestsellers-products .product-container:nth-child(3) {
+  display: none;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  right: -19px;
+  transform: translateY(-50%);
+  padding: 10px 15px 11px;
+}
+
+.carousel-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-pagination > button {
+  padding: 10px;
+}
+
+.carousel-pagination :first-child {
+  background-color: var(--clr-darker-blue);
+}

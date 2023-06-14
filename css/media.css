@@ -1,0 +1,346 @@
+/* -------------------------------------------- */
+/*                 Media Queries                */
+/* -------------------------------------------- */
+
+@media (min-width: 400px) {
+  /* --------------- Footer Bottom -------------- */
+
+  .footer-bottom {
+    justify-content: space-between;
+  }
+
+  .payment-icons {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* ---------------- Sale Banner --------------- */
+
+  .sale-banner {
+    background-size: 30%;
+  }
+
+  /* ----------------- Products ----------------- */
+
+  .product-container :not(:first-child) {
+    margin: 10px;
+  }
+
+  .product-container p {
+    display: block;
+    overflow: visible;
+  }
+
+  /* --------------- Product Page --------------- */
+
+  .product-specific-content h1 {
+    text-align: left;
+  }
+}
+
+@media (min-width: 700px) {
+  /* ------------ Navigation and Cart ----------- */
+
+  .header-logo {
+    margin: 0;
+  }
+
+  .header-nav {
+    position: static;
+    width: fit-content;
+    box-shadow: none;
+  }
+
+  .header-nav ul {
+    display: flex;
+    gap: 50px;
+  }
+
+  .header-nav li {
+    height: auto !important;
+    margin: 0 !important;
+    line-height: normal;
+    overflow: visible;
+    transition: none;
+  }
+
+  .shopping-cart {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .shopping-cart span::before {
+    content: "Cart ";
+  }
+
+  .burger-icon {
+    display: none;
+  }
+
+  /* ------------- Collection Cards ------------- */
+
+  .collection-cards {
+    flex-direction: row;
+  }
+
+  /* ---------------- Sale Banner --------------- */
+
+  .sale-banner {
+    padding-top: 30px;
+    grid-template-columns: 2fr auto 1fr auto 2fr;
+    background: var(--clr-light-blue) url("../images/graphics/mountain_background_medium.svg") no-repeat left bottom;
+    background-size: 20%;
+  }
+
+  .sale-banner-image {
+    grid-column: 2 / 3;
+  }
+
+  .sale-banner-content {
+    grid-column: 4 / 5;
+  }
+
+  .sale-banner-content h3 {
+    text-align: left;
+  }
+
+  /* -------- Best Sellers and Shop Page -------- */
+
+  .bestsellers-products,
+  .products-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bestsellers-products .product-container:nth-child(3) {
+    display: grid;
+  }
+
+  /* --------------- Product Page --------------- */
+
+  .product-specific {
+    min-height: 540px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .product-image,
+  .product-specific-content {
+    max-width: 500px;
+  }
+
+  .product-specific-content {
+    flex-basis: 70%;
+  }
+
+  .product-image {
+    height: 100%;
+  }
+
+  /* --------------- Checkout Page -------------- */
+
+  .checkout-stages {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "checkout-header checkout-header"
+      "order-review order-review"
+      "shipping-info payment-method"
+      "shipping-info order-summary";
+    gap: 65px 5%;
+  }
+
+  .checkout-stages h1 {
+    grid-area: checkout-header;
+  }
+
+  .order-review {
+    grid-area: order-review;
+  }
+
+  .shipping-info {
+    grid-area: shipping-info;
+  }
+
+  .payment-method {
+    grid-area: payment-method;
+  }
+
+  .order-summary {
+    grid-area: order-summary;
+  }
+
+  .order-review-table thead th:not(:first-child) {
+    display: table-cell;
+  }
+
+  .order-review-table tbody tr {
+    display: table-row;
+  }
+
+  .order-review-table tbody td:not(:first-child, :last-child)::before {
+    display: none;
+  }
+
+  .cart-product-info p::before {
+    content: "Color: ";
+  }
+
+  .shipping-info h2::after {
+    content: "rmation";
+  }
+
+  /* --------------- About Us Page -------------- */
+
+  .who-we-are,
+  .why-us {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .who-we-are > *,
+  .why-us > * {
+    max-width: 500px;
+  }
+
+  .who-we-are {
+    min-height: 560px;
+  }
+
+  .why-us {
+    min-height: 600px;
+  }
+
+  .about-us-image {
+    height: 100%;
+  }
+
+  .who-we-are :first-child,
+  .why-us :last-child {
+    justify-self: end;
+  }
+
+  .who-we-are .about-us-content {
+    grid-row: 1 / 2;
+  }
+
+  .who-we-are img {
+    object-position: 65%;
+  }
+
+  /* -------------- Contact Us Page ------------- */
+
+  .contact-us-areas {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "contact-header contact-header"
+      "get-in-touch quick-contact"
+      "connect-with-us quick-contact";
+    gap: 65px 5%;
+  }
+
+  .contact-us-areas h1 {
+    grid-area: contact-header;
+  }
+
+  .get-in-touch {
+    grid-area: get-in-touch;
+  }
+
+  .connect-with-us {
+    grid-area: connect-with-us;
+  }
+
+  .quick-contact {
+    grid-area: quick-contact;
+  }
+}
+
+@media (min-width: 950px) {
+  /* ---------------- Footer Top ---------------- */
+
+  .footer-top {
+    padding-block: 30px 50px;
+    flex-direction: row;
+    border-bottom: var(--bd-blue-grey);
+  }
+
+  .footer-top > div {
+    border-bottom: none;
+  }
+
+  .footer-logo {
+    padding-block: 0;
+  }
+
+  .accordion-header {
+    display: block;
+    padding-top: 0;
+    pointer-events: none; /* Prevent triggering the accordions when in desktop view */
+  }
+
+  .accordion-arrow {
+    display: none;
+  }
+
+  .footer-nav,
+  .footer-icons,
+  .newsletter {
+    height: auto !important;
+    overflow: visible;
+    transition: none;
+  }
+
+  /* ------------------- Hero ------------------- */
+
+  .hero {
+    flex-direction: row;
+  }
+
+  .hero-left,
+  .hero-right {
+    flex: 1;
+  }
+
+  .hero-left {
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    background-size: 40%;
+  }
+
+  .hero-content-wrapper {
+    position: absolute;
+    width: 99vw; /* Workaround to avoid including a vertical scrollbar - it's not going to be pixel perfect */
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-content {
+    width: min(var(--maxw-page), calc(100% - var(--minm-page)));
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    text-align: left;
+  }
+
+  .hero-content p {
+    max-width: 440px;
+  }
+
+  .hero-right {
+    max-height: 500px;
+  }
+
+  .hero-image {
+    height: 100%;
+  }
+
+  .mountain-mask {
+    top: 50%;
+    left: -1px;
+    width: 100%;
+    height: 480px;
+    transform: translateY(-50%);
+  }
+}

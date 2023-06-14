@@ -1,0 +1,62 @@
+/* -------------------------------------------- */
+/*                Links / Buttons               */
+/* -------------------------------------------- */
+
+a,
+button,
+input[type="submit"],
+.accordion-header {
+  font-family: inherit;
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-semi-bold);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--clr-white);
+  border: none;
+  transition: text-shadow var(--tr-link);
+}
+
+a:not(.cta):hover,
+.accordion-header:hover {
+  text-shadow: -0.5px 0 0 var(--clr-white), 0.5px 0 0 var(--clr-white);
+}
+
+.dark-link {
+  color: var(--clr-black);
+}
+
+a.dark-link:hover {
+  text-shadow: -0.5px 0 0 var(--clr-black), 0.5px 0 0 var(--clr-black);
+}
+
+.cta {
+  display: block;
+  max-width: fit-content;
+  padding: 10px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: var(--bd-radius);
+  background-color: var(--clr-blue);
+}
+
+.cta:hover {
+  transition-property: color, border-color, background-color;
+  background-color: var(--clr-dark-blue);
+}
+
+.white-cta {
+  color: var(--clr-blue);
+  border: var(--bd) var(--clr-transparent);
+  background-color: var(--clr-white);
+}
+
+.white-cta:hover {
+  color: var(--clr-white);
+  border-color: var(--clr-white);
+  background-color: var(--clr-transparent);
+}
+
+.round-cta {
+  padding: 5px 10px;
+  border-radius: 50%;
+}
