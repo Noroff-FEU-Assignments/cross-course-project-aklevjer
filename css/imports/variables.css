@@ -1,0 +1,42 @@
+/* -------------------------------------------- */
+/*                     Root                     */
+/* -------------------------------------------- */
+
+:root {
+  --clr-blue: #1f4373;
+  --clr-dark-blue: #0e2440;
+  --clr-darker-blue: #081626;
+  --clr-light-blue: #275490;
+  --clr-blue-grey: #94a5bc;
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-green: #155821;
+  --clr-red: #b50000;
+  --clr-transparent: rgba(0, 0, 0, 0);
+  --clr-dark-shadow: rgba(0, 0, 0, 0.3);
+
+  --bd: 1px solid;
+  --bd-radius: 5px;
+  --bd-blue: var(--bd) var(--clr-blue);
+  --bd-blue-grey: var(--bd) var(--clr-blue-grey);
+  --bd-white: var(--bd) var(--clr-white);
+
+  --tr-link: 125ms linear;
+  --tr-dropdown: 250ms ease;
+  --tr-accordion: 300ms ease;
+
+  --fs-normal: 1rem;
+  --fs-medium: 1.1rem;
+  --fs-large: 1.2rem;
+  --fs-xlarge: 1.3rem;
+  --fs-xxlarge: 1.4rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  --maxw-page: 1100px;
+  --minm-page: 40px;
+  --hgt-header: 82px;
+}

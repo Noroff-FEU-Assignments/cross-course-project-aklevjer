@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Complete your purchase at Rainy Days and enjoy a seamless checkout experience for your favorite rain jacket." />
+    <title>Rainy Days - Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container maxw-container">
+        <a href="index.html" class="header-logo"><img src="images/logos/rainydays_logo_small.svg" alt="Rainy Days logo" class="icon" /></a>
+        <input type="checkbox" id="burger-toggle" class="hidden" />
+        <label for="burger-toggle" class="burger-icon"><img src="images/icons/burger_icon.svg" alt="Burger icon" class="icon" /></label>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="shop.html">Men</a></li>
+            <li><a href="shop.html">Women</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="checkout.html" class="shopping-cart">
+          <img src="images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" />
+          <span>(1)</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="maxw-container">
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html" class="dark-link">Home</a></li>
+          <li><a href="shop.html" class="dark-link">Shop</a></li>
+          <li><strong>Checkout</strong></li>
+        </ol>
+      </nav>
+
+      <section class="checkout-stages">
+        <h1>Complete your order now</h1>
+        <section class="order-review">
+          <h2>1. Order review</h2>
+          <div class="order-review-wrapper">
+            <table class="order-review-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Size</th>
+                  <th>Quantity</th>
+                  <th colspan="2">Total Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="cart-product">
+                      <img src="images/products/jacket1.jpg" alt="Grey and orange rain jacket" />
+                      <div class="cart-product-info">
+                        <h3>RA jacket</h3>
+                        <p>Charcoal Orange</p>
+                        <span class="in-stock">In stock</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-label="Size">Unisex</td>
+                  <td data-label="Quantity">
+                    <div class="quantity-controls">
+                      <button class="cta round-cta">&minus;</button>
+                      <span>1</span>
+                      <button class="cta round-cta">&plus;</button>
+                    </div>
+                  </td>
+                  <td data-label="Total">$249.00</td>
+                  <td><a href="index.html" class="cta round-cta">x</a></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5"><strong>Subtotal: $249.00</strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <section class="shipping-info">
+          <h2>2. Shipping info</h2>
+          <div class="shipping-info-wrapper">
+            <form>
+              <fieldset>
+                <legend>Contact information</legend>
+                <label for="email">Email <span class="required-field">*</span></label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required />
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="12345678" />
+              </fieldset>
+              <fieldset>
+                <legend>Delivery address</legend>
+                <label for="first-name">First name <span class="required-field">*</span></label>
+                <input type="text" id="first-name" name="first-name" placeholder="Name" required />
+                <label for="last-name">Last name <span class="required-field">*</span></label>
+                <input type="text" id="last-name" name="last-name" placeholder="Lastname" required />
+                <label for="street-address">Street address <span class="required-field">*</span></label>
+                <input type="text" id="street-address" name="street-address" placeholder="Slottsplassen 1" required />
+                <div class="input-row-wrapper">
+                  <div>
+                    <label for="postcode">Postcode <span class="required-field">*</span></label>
+                    <input type="text" id="postcode" name="postcode" placeholder="1234" required />
+                  </div>
+                  <div>
+                    <label for="city">City <span class="required-field">*</span></label>
+                    <input type="text" id="city" name="city" placeholder="Oslo" required />
+                  </div>
+                </div>
+                <label for="country">Country <span class="required-field">*</span></label>
+                <input type="text" id="country" name="country" placeholder="Norway" required />
+              </fieldset>
+              <p>Required fields <span class="required-field">*</span></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="payment-method">
+          <h2>3. Payment method</h2>
+          <div class="payment-method-wrapper">
+            <form>
+              <fieldset class="payment-methods">
+                <legend>Choose payment</legend>
+                <div>
+                  <input type="radio" id="credit-card" value="credit-card" name="payment-method" checked />
+                  <label for="credit-card"><img src="images/icons/credit_card_icon.svg" alt="Credit card icon" class="icon" />Credit Card</label>
+                </div>
+                <div>
+                  <input type="radio" id="paypal" value="paypal" name="payment-method" />
+                  <label for="paypal"><img src="images/icons/paypal_p_icon.svg" alt="Paypal icon" class="icon" />PayPal</label>
+                </div>
+                <div>
+                  <input type="radio" id="klarna" value="klarna" name="payment-method" />
+                  <label for="klarna"><img src="images/icons/klarna_k_icon.svg" alt="Klarna icon" class="icon" />Klarna</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Credit card</legend>
+                <label for="credit-card-number">Credit Card <span class="required-field">*</span></label>
+                <input type="text" id="credit-card-number" name="credit-card-number" placeholder="1234 5678 9012 3456" required />
+                <div class="input-row-wrapper">
+                  <div>
+                    <label for="exp-date">Expiry date <span class="required-field">*</span></label>
+                    <input type="text" id="exp-date" name="exp-date" placeholder="MM/YY" required />
+                  </div>
+                  <div>
+                    <label for="cvv">CVV <span class="required-field">*</span></label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required />
+                  </div>
+                </div>
+              </fieldset>
+              <p>Required fields <span class="required-field">*</span></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="order-summary">
+          <h2>4. Order summary</h2>
+          <div class="order-summary-wrapper">
+            <table class="order-summary-table">
+              <tbody>
+                <tr>
+                  <td>1x RA Jacket</td>
+                  <td>$249.00</td>
+                </tr>
+                <tr>
+                  <td>Subtotal</td>
+                  <td>$249.00</td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>FREE</td>
+                </tr>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td><strong>$249.00</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="checkout_success.html" class="cta">Checkout now</a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top maxw-container">
+        <div><img src="images/logos/rainydays_logo_large.svg" alt="Rainy Days logo" class="footer-logo" /></div>
+        <div>
+          <input type="checkbox" id="quick-links-toggle" class="hidden" />
+          <label for="quick-links-toggle" class="accordion-header">Quick links<span class="accordion-arrow">&#x276F;</span></label>
+          <nav class="footer-nav">
+            <ul class="links-list">
+              <li><a href="shop.html">Men</a></li>
+              <li><a href="shop.html">Women</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <input type="checkbox" id="socials-toggle" class="hidden" />
+          <label for="socials-toggle" class="accordion-header">Follow us<span class="accordion-arrow">&#x276F;</span></label>
+          <ul class="links-list social-icons footer-icons">
+            <li>
+              <a href="https://www.facebook.com" target="_blank">
+                <img src="images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" />
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank">
+                <img src="images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" />
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/" target="_blank">
+                <img src="images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" />
+                Youtube
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <input type="checkbox" id="newsletter-toggle" class="hidden" />
+          <label for="newsletter-toggle" class="accordion-header">Newsletter<span class="accordion-arrow">&#x276F;</span></label>
+          <div class="newsletter">
+            <p>Sign up to our newsletter for special offers, news and more!</p>
+            <form>
+              <label for="newsletter-email" class="hidden">Email</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="email@example.com" required />
+              <input type="submit" value="Signup" class="cta" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom maxw-container">
+        <p>&copy; 2023 Rainy Days</p>
+        <div class="payment-icons">
+          <img src="images/icons/klarna_icon.svg" alt="Klarna icon" />
+          <img src="images/icons/paypal_icon.svg" alt="Paypal icon" />
+          <img src="images/icons/mastercard_icon.svg" alt="Mastercard icon" />
+          <img src="images/icons/visa_icon.svg" alt="Visa icon" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

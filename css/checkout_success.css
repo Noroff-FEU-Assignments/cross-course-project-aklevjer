@@ -1,0 +1,27 @@
+/* -------------------------------------------- */
+/*             Checkout Success Page            */
+/* -------------------------------------------- */
+
+/* ------------ Order Confirmation ------------ */
+
+.order-confirmation {
+  max-width: 550px;
+  margin-inline: auto;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-confirmation img,
+.order-confirmation .cta {
+  align-self: center;
+}
+
+.order-confirmation img {
+  max-width: 150px;
+}
+
+.order-confirmation h1 {
+  font-size: 2rem;
+  text-transform: none;
+}
