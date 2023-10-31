@@ -5,6 +5,8 @@
 /* ------------- Product Specific ------------- */
 
 .product-specific {
+  position: relative;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   gap: 30px;

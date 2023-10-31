@@ -5,6 +5,8 @@
 /* ----------------- Products ----------------- */
 
 .products-list {
+  position: relative;
+  min-height: 300px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px 5%;

@@ -1,0 +1,24 @@
+/* --------------- Global Styles -------------- */
+
+@import "/css/imports/_variables.css";
+@import "/css/imports/_reset.css";
+@import "/css/imports/_global.css";
+@import "/css/imports/_utility.css";
+@import "/css/imports/_links.css";
+@import "/css/imports/_header.css";
+@import "/css/imports/_breadcrumbs.css";
+@import "/css/imports/_footer.css";
+
+/* ------------------- Pages ------------------ */
+
+@import "/css/imports/_home.css";
+@import "/css/imports/_shop.css";
+@import "/css/imports/_product.css";
+@import "/css/imports/_checkout.css";
+@import "/css/imports/_checkout-success.css";
+@import "/css/imports/_about.css";
+@import "/css/imports/_contact.css";
+
+/* --------------- Media Queries -------------- */
+
+@import "/css/imports/_media.css";

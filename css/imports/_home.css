@@ -17,7 +17,7 @@
 .hero-left {
   justify-content: center;
   color: var(--clr-white);
-  background: var(--clr-light-blue) url("../images/graphics/mountain_background_medium.svg") no-repeat left bottom;
+  background: var(--clr-light-blue) url("/images/graphics/mountain_background_medium.svg") no-repeat left bottom;
   background-size: 25%;
 }
 
@@ -47,7 +47,7 @@
   width: 250px;
   height: 191px;
   transform: translateX(-50%) rotate(-90deg);
-  background: url("../images/graphics/mountain_mask.svg") no-repeat;
+  background: url("/images/graphics/mountain_mask.svg") no-repeat;
   background-size: contain;
 }
 
@@ -101,7 +101,7 @@
   place-items: center;
   border-radius: var(--bd-radius);
   color: var(--clr-white);
-  background: var(--clr-light-blue) url("../images/graphics/mountain_background_small.svg") no-repeat right bottom;
+  background: var(--clr-light-blue) url("/images/graphics/mountain_background_small.svg") no-repeat right bottom;
   background-size: 108px;
 }
 
@@ -129,22 +129,41 @@
 
 .bestsellers-products {
   position: relative;
+  min-height: 300px;
   margin-block: 40px 30px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5%;
 }
 
-.bestsellers-products .product-container:nth-child(3) {
+.bestsellers-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  touch-action: none;
+}
+
+.bestsellers-container::-webkit-scrollbar {
   display: none;
 }
 
-.carousel-arrow {
+.carousel-prev,
+.carousel-next {
   position: absolute;
   top: 50%;
-  right: -19px;
   transform: translateY(-50%);
   padding: 10px 15px 11px;
+  z-index: 1;
+}
+
+.carousel-prev {
+  left: -19px;
+}
+
+.carousel-next {
+  right: -19px;
 }
 
 .carousel-pagination {
@@ -157,6 +176,6 @@
   padding: 10px;
 }
 
-.carousel-pagination :first-child {
+.active-pagination {
   background-color: var(--clr-darker-blue);
 }

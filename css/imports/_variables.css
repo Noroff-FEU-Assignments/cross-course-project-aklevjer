@@ -1,5 +1,5 @@
 /* -------------------------------------------- */
-/*                     Root                     */
+/*               Global Variables               */
 /* -------------------------------------------- */
 
 :root {
@@ -8,6 +8,7 @@
   --clr-darker-blue: #081626;
   --clr-light-blue: #275490;
   --clr-blue-grey: #94a5bc;
+  --clr-grey: #e7e7e7;
   --clr-white: #ffffff;
   --clr-black: #000000;
   --clr-green: #155821;

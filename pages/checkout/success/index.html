@@ -7,28 +7,27 @@
     <title>Rainy Days - Order Confirmed</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/checkout_success.css" />
-    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/index.js" type="module"></script>
   </head>
   <body>
     <header>
       <div class="header-container maxw-container">
-        <a href="index.html" class="header-logo"><img src="images/logos/rainydays_logo_small.svg" alt="Rainy Days logo" class="icon" /></a>
+        <a href="/" class="header-logo"><img src="/images/logos/rainydays_logo_small.svg" alt="Rainy Days logo" class="icon" /></a>
         <input type="checkbox" id="burger-toggle" class="hidden" />
-        <label for="burger-toggle" class="burger-icon"><img src="images/icons/burger_icon.svg" alt="Burger icon" class="icon" /></label>
+        <label for="burger-toggle" class="burger-icon"><img src="/images/icons/burger_icon.svg" alt="Burger icon" class="icon" /></label>
         <nav class="header-nav">
           <ul>
-            <li><a href="shop.html">Men</a></li>
-            <li><a href="shop.html">Women</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/pages/shop/">Men</a></li>
+            <li><a href="/pages/shop/">Women</a></li>
+            <li><a href="/pages/about/">About</a></li>
+            <li><a href="/pages/contact/">Contact</a></li>
           </ul>
         </nav>
-        <a href="checkout.html" class="shopping-cart">
-          <img src="images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" />
-          <span>(0)</span>
+        <a href="/pages/checkout/" class="shopping-cart">
+          <img src="/images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" />
+          <span class="cart-count"></span>
         </a>
       </div>
     </header>
@@ -36,35 +35,35 @@
     <main class="maxw-container">
       <nav class="breadcrumbs">
         <ol>
-          <li><a href="index.html" class="dark-link">Home</a></li>
-          <li><a href="shop.html" class="dark-link">Shop</a></li>
-          <li><a href="checkout.html" class="dark-link">Checkout</a></li>
+          <li><a href="/" class="dark-link">Home</a></li>
+          <li><a href="/pages/shop/" class="dark-link">Shop</a></li>
+          <li><a href="/pages/checkout/" class="dark-link">Checkout</a></li>
           <li><strong>Success</strong></li>
         </ol>
       </nav>
 
       <section class="order-confirmation">
-        <img src="images/icons/success_icon.svg" alt="Success icon" />
+        <img src="/images/icons/success_icon.svg" alt="Success icon" />
         <h1>Thank you for shopping with us!</h1>
         <p class="p-large">Your order has been received and is beeing processed.</p>
         <p class="p-large">Thank you for choosing us to be a part of your outdoor adventures. Keep an eye out for our shipping confirmation email.</p>
         <p class="p-large">If you have any questions or inquiries regarding your order, don't hesitate to send us an email or call us. Our customer support team will gladly help you!</p>
-        <a href="index.html" class="cta">Continue shopping</a>
+        <a href="/" class="cta">Continue shopping</a>
       </section>
     </main>
 
     <footer>
       <div class="footer-top maxw-container">
-        <div><img src="images/logos/rainydays_logo_large.svg" alt="Rainy Days logo" class="footer-logo" /></div>
+        <div><img src="/images/logos/rainydays_logo_large.svg" alt="Rainy Days logo" class="footer-logo" /></div>
         <div>
           <input type="checkbox" id="quick-links-toggle" class="hidden" />
           <label for="quick-links-toggle" class="accordion-header">Quick links<span class="accordion-arrow">&#x276F;</span></label>
           <nav class="footer-nav">
             <ul class="links-list">
-              <li><a href="shop.html">Men</a></li>
-              <li><a href="shop.html">Women</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/pages/shop/">Men</a></li>
+              <li><a href="/pages/shop/">Women</a></li>
+              <li><a href="/pages/about/">About</a></li>
+              <li><a href="/pages/contact/">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -74,19 +73,19 @@
           <ul class="links-list social-icons footer-icons">
             <li>
               <a href="https://www.facebook.com" target="_blank">
-                <img src="images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" />
+                <img src="/images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" />
                 Facebook
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank">
-                <img src="images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" />
+                <img src="/images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" />
                 Instagram
               </a>
             </li>
             <li>
               <a href="https://www.youtube.com/" target="_blank">
-                <img src="images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" />
+                <img src="/images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" />
                 Youtube
               </a>
             </li>
@@ -108,10 +107,10 @@
       <div class="footer-bottom maxw-container">
         <p>&copy; 2023 Rainy Days</p>
         <div class="payment-icons">
-          <img src="images/icons/klarna_icon.svg" alt="Klarna icon" />
-          <img src="images/icons/paypal_icon.svg" alt="Paypal icon" />
-          <img src="images/icons/mastercard_icon.svg" alt="Mastercard icon" />
-          <img src="images/icons/visa_icon.svg" alt="Visa icon" />
+          <img src="/images/icons/klarna_icon.svg" alt="Klarna icon" />
+          <img src="/images/icons/paypal_icon.svg" alt="Paypal icon" />
+          <img src="/images/icons/mastercard_icon.svg" alt="Mastercard icon" />
+          <img src="/images/icons/visa_icon.svg" alt="Visa icon" />
         </div>
       </div>
     </footer>

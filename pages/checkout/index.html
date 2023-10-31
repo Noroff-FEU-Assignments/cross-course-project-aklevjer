@@ -7,28 +7,27 @@
     <title>Rainy Days - Checkout</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/checkout.css" />
-    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/index.js" type="module"></script>
   </head>
   <body>
     <header>
       <div class="header-container maxw-container">
-        <a href="index.html" class="header-logo"><img src="images/logos/rainydays_logo_small.svg" alt="Rainy Days logo" class="icon" /></a>
+        <a href="/" class="header-logo"><img src="/images/logos/rainydays_logo_small.svg" alt="Rainy Days logo" class="icon" /></a>
         <input type="checkbox" id="burger-toggle" class="hidden" />
-        <label for="burger-toggle" class="burger-icon"><img src="images/icons/burger_icon.svg" alt="Burger icon" class="icon" /></label>
+        <label for="burger-toggle" class="burger-icon"><img src="/images/icons/burger_icon.svg" alt="Burger icon" class="icon" /></label>
         <nav class="header-nav">
           <ul>
-            <li><a href="shop.html">Men</a></li>
-            <li><a href="shop.html">Women</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/pages/shop/">Men</a></li>
+            <li><a href="/pages/shop/">Women</a></li>
+            <li><a href="/pages/about/">About</a></li>
+            <li><a href="/pages/contact/">Contact</a></li>
           </ul>
         </nav>
-        <a href="checkout.html" class="shopping-cart">
-          <img src="images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" />
-          <span>(1)</span>
+        <a href="/pages/checkout/" class="shopping-cart">
+          <img src="/images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" />
+          <span class="cart-count"></span>
         </a>
       </div>
     </header>
@@ -36,8 +35,8 @@
     <main class="maxw-container">
       <nav class="breadcrumbs">
         <ol>
-          <li><a href="index.html" class="dark-link">Home</a></li>
-          <li><a href="shop.html" class="dark-link">Shop</a></li>
+          <li><a href="/" class="dark-link">Home</a></li>
+          <li><a href="/pages/shop/" class="dark-link">Shop</a></li>
           <li><strong>Checkout</strong></li>
         </ol>
       </nav>
@@ -56,33 +55,10 @@
                   <th colspan="2">Total Price</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="cart-product">
-                      <img src="images/products/jacket1.jpg" alt="Grey and orange rain jacket" />
-                      <div class="cart-product-info">
-                        <h3>RA jacket</h3>
-                        <p>Charcoal Orange</p>
-                        <span class="in-stock">In stock</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td data-label="Size">Unisex</td>
-                  <td data-label="Quantity">
-                    <div class="quantity-controls">
-                      <button class="cta round-cta">&minus;</button>
-                      <span>1</span>
-                      <button class="cta round-cta">&plus;</button>
-                    </div>
-                  </td>
-                  <td data-label="Total">$249.00</td>
-                  <td><a href="index.html" class="cta round-cta">x</a></td>
-                </tr>
-              </tbody>
+              <tbody></tbody>
               <tfoot>
                 <tr>
-                  <td colspan="5"><strong>Subtotal: $249.00</strong></td>
+                  <td colspan="5"><strong class="order-review-subtotal">Subtotal: $0.00</strong></td>
                 </tr>
               </tfoot>
             </table>
@@ -134,15 +110,15 @@
                 <legend>Choose payment</legend>
                 <div>
                   <input type="radio" id="credit-card" value="credit-card" name="payment-method" checked />
-                  <label for="credit-card"><img src="images/icons/credit_card_icon.svg" alt="Credit card icon" class="icon" />Credit Card</label>
+                  <label for="credit-card"><img src="/images/icons/credit_card_icon.svg" alt="Credit card icon" class="icon" />Credit Card</label>
                 </div>
                 <div>
                   <input type="radio" id="paypal" value="paypal" name="payment-method" />
-                  <label for="paypal"><img src="images/icons/paypal_p_icon.svg" alt="Paypal icon" class="icon" />PayPal</label>
+                  <label for="paypal"><img src="/images/icons/paypal_p_icon.svg" alt="Paypal icon" class="icon" />PayPal</label>
                 </div>
                 <div>
                   <input type="radio" id="klarna" value="klarna" name="payment-method" />
-                  <label for="klarna"><img src="images/icons/klarna_k_icon.svg" alt="Klarna icon" class="icon" />Klarna</label>
+                  <label for="klarna"><img src="/images/icons/klarna_k_icon.svg" alt="Klarna icon" class="icon" />Klarna</label>
                 </div>
               </fieldset>
               <fieldset>
@@ -171,24 +147,24 @@
             <table class="order-summary-table">
               <tbody>
                 <tr>
-                  <td>1x RA Jacket</td>
-                  <td>$249.00</td>
-                </tr>
-                <tr>
                   <td>Subtotal</td>
-                  <td>$249.00</td>
+                  <td class="order-summary-subtotal">$0.00</td>
                 </tr>
                 <tr>
                   <td>Shipping</td>
                   <td>FREE</td>
                 </tr>
                 <tr>
+                  <td>Estimated Tax</td>
+                  <td>$0.00</td>
+                </tr>
+                <tr>
                   <td><strong>Total</strong></td>
-                  <td><strong>$249.00</strong></td>
+                  <td><strong class="order-summary-total">$0.00</strong></td>
                 </tr>
               </tbody>
             </table>
-            <a href="checkout_success.html" class="cta">Checkout now</a>
+            <a href="/pages/checkout/success/" class="cta">Checkout now</a>
           </div>
         </section>
       </section>
@@ -196,16 +172,16 @@
 
     <footer>
       <div class="footer-top maxw-container">
-        <div><img src="images/logos/rainydays_logo_large.svg" alt="Rainy Days logo" class="footer-logo" /></div>
+        <div><img src="/images/logos/rainydays_logo_large.svg" alt="Rainy Days logo" class="footer-logo" /></div>
         <div>
           <input type="checkbox" id="quick-links-toggle" class="hidden" />
           <label for="quick-links-toggle" class="accordion-header">Quick links<span class="accordion-arrow">&#x276F;</span></label>
           <nav class="footer-nav">
             <ul class="links-list">
-              <li><a href="shop.html">Men</a></li>
-              <li><a href="shop.html">Women</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/pages/shop/">Men</a></li>
+              <li><a href="/pages/shop/">Women</a></li>
+              <li><a href="/pages/about/">About</a></li>
+              <li><a href="/pages/contact/">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -215,19 +191,19 @@
           <ul class="links-list social-icons footer-icons">
             <li>
               <a href="https://www.facebook.com" target="_blank">
-                <img src="images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" />
+                <img src="/images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" />
                 Facebook
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank">
-                <img src="images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" />
+                <img src="/images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" />
                 Instagram
               </a>
             </li>
             <li>
               <a href="https://www.youtube.com/" target="_blank">
-                <img src="images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" />
+                <img src="/images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" />
                 Youtube
               </a>
             </li>
@@ -249,10 +225,10 @@
       <div class="footer-bottom maxw-container">
         <p>&copy; 2023 Rainy Days</p>
         <div class="payment-icons">
-          <img src="images/icons/klarna_icon.svg" alt="Klarna icon" />
-          <img src="images/icons/paypal_icon.svg" alt="Paypal icon" />
-          <img src="images/icons/mastercard_icon.svg" alt="Mastercard icon" />
-          <img src="images/icons/visa_icon.svg" alt="Visa icon" />
+          <img src="/images/icons/klarna_icon.svg" alt="Klarna icon" />
+          <img src="/images/icons/paypal_icon.svg" alt="Paypal icon" />
+          <img src="/images/icons/mastercard_icon.svg" alt="Mastercard icon" />
+          <img src="/images/icons/visa_icon.svg" alt="Visa icon" />
         </div>
       </div>
     </footer>

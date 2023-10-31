@@ -1,0 +1,76 @@
+/* -------------------------------------------- */
+/*                    Header                    */
+/* -------------------------------------------- */
+
+header {
+  position: fixed;
+  width: 100%;
+  min-height: var(--hgt-header);
+  z-index: 1;
+  background-color: var(--clr-blue);
+}
+
+.header-container {
+  padding-block: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  margin-right: auto;
+}
+
+/* -------------------------------------------- */
+/*              Navigation and Cart             */
+/* -------------------------------------------- */
+
+/* Checkbox hack drop-down menu
+  Inspiration: https://codepen.io/alvarotrigo/pen/MWEJEWG */
+
+.header-nav {
+  position: absolute;
+  top: var(--hgt-header);
+  left: 0;
+  width: 100%;
+  box-shadow: 0 75px 100px var(--clr-dark-shadow);
+  background-color: var(--clr-blue);
+}
+
+.header-nav li {
+  height: 0;
+  line-height: 40px;
+  text-align: center;
+  overflow: hidden;
+  transition: height var(--tr-dropdown);
+}
+
+.header-nav a {
+  display: block;
+}
+
+#burger-toggle:checked ~ .header-nav li {
+  height: 40px;
+  overflow: visible;
+}
+
+#burger-toggle:checked ~ .header-nav li:last-child {
+  margin-bottom: 10px;
+}
+
+.burger-icon {
+  order: 3;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.shopping-cart {
+  margin-inline: 20px;
+  padding: 5px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  border: var(--bd-white);
+  border-radius: var(--bd-radius);
+}

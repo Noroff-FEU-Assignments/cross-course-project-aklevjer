@@ -1,0 +1,115 @@
+/* -------------------------------------------- */
+/*                Utility Classes               */
+/* -------------------------------------------- */
+
+/* Max width container
+ Inspiration: https://www.youtube.com/watch?v=wBKT2KN_Y9s&t=155s */
+
+.maxw-container {
+  width: min(var(--maxw-page), calc(100% - var(--minm-page)));
+  margin-inline: auto;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none;
+}
+
+.p-large {
+  font-size: var(--fs-large);
+}
+
+.required-field {
+  color: var(--clr-red);
+}
+
+.in-stock {
+  color: var(--clr-green);
+}
+
+/* Loading Spinner
+ Inspiration: https://www.w3schools.com/howto/howto_css_loader.asp */
+
+.loading-spinner,
+.error-message {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.loading-spinner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 7px solid var(--clr-grey);
+  border-top-color: var(--clr-blue);
+  animation: spin 2s linear infinite;
+}
+
+.error-message {
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  border-radius: var(--bd-radius);
+  border: 4px solid var(--clr-red);
+}
+
+.error-message strong {
+  color: var(--clr-red);
+}
+
+.error-message p {
+  margin-top: 5px;
+  font-weight: var(--fw-medium);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------------------------------- */
+/*           Bestsellers and Shop Page          */
+/* -------------------------------------------- */
+
+.product-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  text-align: center;
+  color: var(--clr-black);
+  border: var(--bd-blue);
+  border-radius: var(--bd-radius);
+  scroll-snap-align: start;
+}
+
+.product-container:hover {
+  border: 2px solid var(--clr-blue);
+}
+
+.product-container :not(:first-child) {
+  margin: 5px;
+}
+
+.product-container img {
+  padding: 10px 10px 0;
+  aspect-ratio: 3 / 4;
+}
+
+.product-container h2,
+.product-container h5,
+.product-container span {
+  font-size: var(--fs-medium);
+}
+
+.product-container span {
+  font-weight: var(--fw-medium);
+}

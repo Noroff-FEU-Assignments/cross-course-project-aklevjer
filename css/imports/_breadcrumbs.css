@@ -1,0 +1,21 @@
+/* -------------------------------------------- */
+/*                  Breadcrumbs                 */
+/* -------------------------------------------- */
+
+.breadcrumbs {
+  margin-top: 40px;
+  padding-bottom: 5px;
+  border-bottom: var(--bd-blue);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumbs li:not(:first-child)::before {
+  margin-inline: clamp(5px, 1.5vw, 10px);
+  content: "\276F";
+  color: var(--clr-blue);
+}

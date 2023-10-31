@@ -1,0 +1,61 @@
+/* -------------------------------------------- */
+/*                Global Elements               */
+/* -------------------------------------------- */
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font-family: "Montserrat", Helvetica, Verdana, sans-serif;
+}
+
+main {
+  margin-top: var(--hgt-header);
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+main > :not(:last-child) {
+  margin-bottom: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+legend,
+strong {
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+p {
+  line-height: 1.4;
+  hyphens: auto;
+}
+
+label {
+  font-weight: var(--fw-medium);
+}
+
+strong {
+  font-size: var(--fs-medium);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-block: 5px 25px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: var(--fs-normal);
+  border: var(--bd-blue);
+  border-radius: var(--bd-radius);
+  outline-color: var(--clr-blue);
+}
