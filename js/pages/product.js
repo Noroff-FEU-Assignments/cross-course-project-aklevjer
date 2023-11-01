@@ -10,8 +10,8 @@ export async function productPage() {
     const product = await api.fetchProductById(id);
     const productTitle = utils.trimProductTitle(product.title);
 
-    utils.setPageTitle(productTitle);
-    utils.setMetaDescription(product.description);
+    utils.updatePageTitle(productTitle);
+    utils.updateMetaDescription(product.description);
 
     const breadcrumbsCurrent = document.querySelector(".breadcrumbs strong");
     breadcrumbsCurrent.innerText = productTitle;
