@@ -38,6 +38,7 @@ export function removeFromCart(product) {
   if (updatedCart.length) {
     ui.renderCart(updatedCart);
   } else {
+    clearCart();
     ui.renderEmptyCart();
   }
 }

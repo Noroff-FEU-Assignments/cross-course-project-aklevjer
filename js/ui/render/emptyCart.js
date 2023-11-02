@@ -12,24 +12,19 @@ function createEmptyCartCTA() {
   return utils.createHTMLElement("a", "cta", "Continue shopping", null, "/pages/shop/");
 }
 
-function createEmptyCartMsg() {
-  const emptyCartTitle = createEmptyCartTitle();
-  const emptyCartBody = createEmptyCartBody();
-  const emptyCartCTA = createEmptyCartCTA();
-
-  const emptyCartMsgElements = [emptyCartTitle, emptyCartBody, emptyCartCTA];
-  return emptyCartMsgElements;
-}
-
-function changeCheckoutIntoEmptyCart(emptyCartMsgElements) {
+function changeCheckoutIntoEmptyCart(emptyCartElements) {
   const checkoutStages = document.querySelector(".checkout-stages");
   utils.clearElement(checkoutStages);
 
   checkoutStages.classList.replace("checkout-stages", "empty-cart");
-  checkoutStages.append(...emptyCartMsgElements);
+  checkoutStages.append(...emptyCartElements);
 }
 
 export function renderEmptyCart() {
-  const emptyCartMsgElements = createEmptyCartMsg();
-  changeCheckoutIntoEmptyCart(emptyCartMsgElements);
+  const emptyCartTitle = createEmptyCartTitle();
+  const emptyCartBody = createEmptyCartBody();
+  const emptyCartCTA = createEmptyCartCTA();
+
+  const emptyCartElements = [emptyCartTitle, emptyCartBody, emptyCartCTA];
+  changeCheckoutIntoEmptyCart(emptyCartElements);
 }
