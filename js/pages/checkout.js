@@ -3,7 +3,10 @@ import * as utils from "../utils/index.js";
 
 export function checkoutPage() {
   const cart = utils.loadFromStorage();
-  const cartContainer = document.querySelector(".order-review-table tbody");
 
-  ui.renderCart(cart, cartContainer);
+  if (cart.length) {
+    ui.renderCart(cart);
+  } else {
+    ui.renderEmptyCart();
+  }
 }

@@ -35,8 +35,11 @@ export function removeFromCart(product) {
   utils.saveToStorage(updatedCart);
   updateCartCount();
 
-  const cartContainer = document.querySelector(".order-review-table tbody");
-  ui.renderCart(updatedCart, cartContainer);
+  if (updatedCart.length) {
+    ui.renderCart(updatedCart);
+  } else {
+    ui.renderEmptyCart();
+  }
 }
 
 export function clearCart() {

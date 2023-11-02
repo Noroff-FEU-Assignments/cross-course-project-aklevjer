@@ -169,3 +169,16 @@ table td {
   font-weight: var(--fw-bold);
   margin-bottom: 15px;
 }
+
+/* ---------------- Empty Cart ---------------- */
+
+.empty-cart {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+}
+
+.empty-cart p {
+  max-width: 400px;
+  text-align: center;
+}

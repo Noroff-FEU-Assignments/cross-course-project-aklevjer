@@ -104,8 +104,9 @@ function initCheckoutCTA() {
   checkoutCTA.addEventListener("click", ui.clearCart);
 }
 
-export function renderCart(cart, parentElement) {
-  utils.clearElement(parentElement);
+export function renderCart(cart) {
+  const cartContainer = document.querySelector(".cart-container");
+  utils.clearElement(cartContainer);
 
   let subtotal = 0;
 
@@ -114,7 +115,7 @@ export function renderCart(cart, parentElement) {
     subtotal += totalPrice;
 
     const createdCartItem = createCartItem(product, totalPrice);
-    parentElement.append(createdCartItem);
+    cartContainer.append(createdCartItem);
   });
 
   updateSubtotal(subtotal);
