@@ -34,7 +34,7 @@ function createPriceStockContainer(priceStockChildren) {
 }
 
 function createSizeLabel() {
-  const sizeLabel = utils.createHTMLElement("label", "hidden", "Size");
+  const sizeLabel = utils.createHTMLElement("label", "sr-only", "Size");
   sizeLabel.setAttribute("for", "size");
   return sizeLabel;
 }
