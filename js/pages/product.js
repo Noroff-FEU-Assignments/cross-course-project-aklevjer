@@ -16,8 +16,7 @@ export async function productPage() {
     const breadcrumbsCurrent = document.querySelector(".breadcrumbs strong");
     breadcrumbsCurrent.innerText = productTitle;
 
-    const productContainer = document.querySelector(".product-specific");
-    ui.renderProductDetails(product, productContainer);
+    ui.renderProductDetails(product);
   } catch (error) {
     console.error(error);
     ui.showErrorMessage();

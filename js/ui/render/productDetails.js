@@ -109,9 +109,10 @@ function createProduct(product) {
   return productDetailsElements;
 }
 
-export function renderProductDetails(product, parentElement) {
-  utils.clearElement(parentElement);
+export function renderProductDetails(product) {
+  const productContainer = document.querySelector(".product-specific");
+  utils.clearElement(productContainer);
 
   const createdProduct = createProduct(product);
-  parentElement.append(...createdProduct);
+  productContainer.append(...createdProduct);
 }
