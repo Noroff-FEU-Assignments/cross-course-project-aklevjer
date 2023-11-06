@@ -73,6 +73,7 @@ function createProductForm(product, productFormChildren) {
     product.size = form.size.value;
 
     ui.addToCart(product);
+    location.href = "/pages/checkout/";
   });
 
   return productForm;
