@@ -5,7 +5,7 @@ export async function fetchProducts() {
   const products = await response.json();
 
   if (!response.ok) {
-    throw new Error(`HTTP status code: ${response.status}`);
+    throw new Error("Failed to fetch a list of products");
   }
 
   return products;
@@ -16,7 +16,7 @@ export async function fetchProductById(productId) {
   const product = await response.json();
 
   if (!response.ok) {
-    throw new Error(`HTTP status code: ${response.status}`);
+    throw new Error(`Failed to fetch product with the id: ${productId}`);
   }
 
   return product;

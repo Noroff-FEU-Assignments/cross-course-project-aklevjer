@@ -9,7 +9,7 @@ function createEmptyCartBody() {
 }
 
 function createEmptyCartCTA() {
-  return utils.createHTMLElement("a", "cta", "Continue shopping", null, "/pages/shop/");
+  return utils.createHTMLElement("a", "cta", "Shop now", null, "/pages/shop/");
 }
 
 function changeCheckoutIntoEmptyCart(emptyCartElements) {

@@ -23,7 +23,7 @@
   /* ----------------- Products ----------------- */
 
   .bestsellers-container {
-    grid-auto-columns: calc((100% / 2) - 21px);
+    grid-auto-columns: calc((100% - 40px) / 2);
   }
 
   .product-container :not(:first-child) {
@@ -113,7 +113,7 @@
   /* ---------------- Bestsellers --------------- */
 
   .bestsellers-container {
-    grid-auto-columns: calc((100% / 3) - 27px);
+    grid-auto-columns: calc((100% - 40px * 2) / 3);
   }
 
   /* ----------------- Shop Page ---------------- */
