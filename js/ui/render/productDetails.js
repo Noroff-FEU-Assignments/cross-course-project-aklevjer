@@ -91,7 +91,7 @@ function createProduct(product) {
   const productColor = createProductColor(product.baseColor);
   const productDescription = createProductDescription(product.description);
 
-  const productPrice = createProductPrice(product.price);
+  const productPrice = createProductPrice(product.onSale ? product.discountedPrice : product.price);
   const productStock = createProductStock();
   const priceStockChildren = [productPrice, productStock];
   const priceStockContainer = createPriceStockContainer(priceStockChildren);

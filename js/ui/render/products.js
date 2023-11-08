@@ -19,7 +19,7 @@ function createProductItemContainer(productItemChildren, productId) {
 function createProductItem(product, isShopPage) {
   const productImg = createProductImage(product.image, product.title);
   const productTitle = createProductTitle(product.title, isShopPage);
-  const productPrice = createProductPrice(product.price);
+  const productPrice = createProductPrice(product.onSale ? product.discountedPrice : product.price);
 
   const productItemChildren = [productImg, productTitle, productPrice];
   const productItemContainer = createProductItemContainer(productItemChildren, product.id);

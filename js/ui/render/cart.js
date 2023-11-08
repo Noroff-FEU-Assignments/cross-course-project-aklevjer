@@ -111,7 +111,8 @@ export function renderCart(cart) {
   let subtotal = 0;
 
   cart.forEach((product) => {
-    const totalPrice = product.price * product.quantity;
+    const productPrice = product.onSale ? product.discountedPrice : product.price;
+    const totalPrice = productPrice * product.quantity;
     subtotal += totalPrice;
 
     const createdCartItem = createCartItem(product, totalPrice);
