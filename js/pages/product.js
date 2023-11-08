@@ -14,7 +14,7 @@ export async function productPage() {
     utils.updateMetaDescription(product.description);
 
     const breadcrumbsCurrent = document.querySelector(".breadcrumbs strong");
-    breadcrumbsCurrent.innerText = productTitle;
+    breadcrumbsCurrent.textContent = productTitle;
 
     ui.renderProductDetails(product);
   } catch (error) {

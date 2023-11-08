@@ -8,7 +8,7 @@ export function createHTMLElement(tagname, classnames = null, text = null, child
   }
 
   if (text) {
-    element.innerText = text;
+    element.textContent = text;
   }
 
   if (Array.isArray(children) && children.length) {

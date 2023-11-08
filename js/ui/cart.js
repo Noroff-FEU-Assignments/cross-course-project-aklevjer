@@ -10,7 +10,7 @@ export function updateCartCount() {
   });
 
   const cartCount = document.querySelector(".cart-count");
-  cartCount.innerText = `(${totalCount})`;
+  cartCount.textContent = `(${totalCount})`;
 }
 
 export function addToCart(product) {

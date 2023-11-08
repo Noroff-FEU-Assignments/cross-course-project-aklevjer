@@ -94,9 +94,9 @@ function updateSubtotal(subtotal) {
 
   subtotal = subtotal.toFixed(2);
 
-  orderReviewSubtotal.innerText = `Subtotal: $${subtotal}`;
-  orderSummarySubtotal.innerText = `$${subtotal}`;
-  orderSummaryTotal.innerText = `$${subtotal}`;
+  orderReviewSubtotal.textContent = `Subtotal: $${subtotal}`;
+  orderSummarySubtotal.textContent = `$${subtotal}`;
+  orderSummaryTotal.textContent = `$${subtotal}`;
 }
 
 function initCheckoutCTA() {
