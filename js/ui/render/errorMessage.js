@@ -1,7 +1,7 @@
 import * as utils from "../../utils/index.js";
 
 function createErrorIcon() {
-  return utils.createHTMLElement("img", "icon", null, null, null, "/images/icons/error_icon.svg", "Error icon");
+  return utils.createHTMLElement("img", "icon", null, null, null, "/images/icons/error_icon_large.svg", "Error icon");
 }
 
 function createErrorTitle() {
@@ -33,4 +33,14 @@ export function showErrorMessage(message = "Ooops! We couldn't get the data righ
 
   const errorMessageElements = [errorIcon, errorInfoContainer];
   changeSpinnerIntoErrorMsg(errorMessageElements);
+}
+
+export function toggleInputError(inputElement, showError) {
+  const inputContainer = inputElement.parentElement;
+  const errorIcon = inputContainer.querySelector(".input-error-icon");
+  const errorMessage = inputContainer.querySelector(".input-error-message");
+
+  inputElement.classList.toggle("input-error-border", !showError);
+  errorIcon.classList.toggle("hidden", showError);
+  errorMessage.classList.toggle("hidden", showError);
 }

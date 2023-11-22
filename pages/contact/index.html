@@ -90,19 +90,40 @@
         <section class="quick-contact">
           <h2>Quick contact</h2>
           <p class="contact-us-description">Have a question or feedback for us? Let us know by filling out the form below and we'll be happy to help.</p>
-          <form>
+          <form class="contact-form">
             <label for="name">Name <span class="required-field">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Name" required />
+            <div class="input-container">
+              <input type="text" id="name" name="name" placeholder="Name" />
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden">Please enter your name</p>
+            </div>
+
             <label for="email">Email <span class="required-field">*</span></label>
-            <input type="email" id="email" name="email" placeholder="name@example.com" required />
+            <div class="input-container">
+              <input type="email" id="email" name="email" placeholder="name@example.com" />
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden">Please enter a valid email address</p>
+            </div>
+
             <label for="phone">Phone</label>
             <input type="tel" id="phone" name="phone" placeholder="12345678" />
+
             <label for="subject">Subject <span class="required-field">*</span></label>
-            <input type="text" id="subject" name="subject" placeholder="Subject" required />
+            <div class="input-container">
+              <input type="text" id="subject" name="subject" placeholder="Subject" />
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden">Subject must be at least 10 characters</p>
+            </div>
+
             <label for="message">Message <span class="required-field">*</span></label>
-            <textarea id="message" name="message" placeholder="Message" required></textarea>
+            <div class="input-container">
+              <textarea id="message" name="message" placeholder="Message"></textarea>
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden">Message must be at least 25 characters</p>
+            </div>
+
             <input type="submit" value="Send message" class="cta" />
-            <p>Required fields <span class="required-field">*</span></p>
+            <p class="contact-status">Required fields <span class="required-field">*</span></p>
           </form>
         </section>
 

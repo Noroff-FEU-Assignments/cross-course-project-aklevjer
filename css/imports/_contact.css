@@ -61,3 +61,10 @@ address strong {
 .connect-icons a:hover > .icon {
   transform: scale(1.05);
 }
+
+/* ---------- Contact Success Message --------- */
+
+.contact-success {
+  font-weight: var(--fw-bold);
+  color: var(--clr-green);
+}

@@ -87,6 +87,31 @@
   }
 }
 
+/* ---------------- Form Error ---------------- */
+
+.input-container {
+  position: relative;
+}
+
+.input-error-icon {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+}
+
+.input-error-message {
+  margin: -20px 5px 20px;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-red);
+}
+
+.input-error-border {
+  padding-right: 40px;
+  outline-color: var(--clr-red);
+  border-color: var(--clr-red);
+}
+
 /* -------------------------------------------- */
 /*           Bestsellers and Shop Page          */
 /* -------------------------------------------- */
