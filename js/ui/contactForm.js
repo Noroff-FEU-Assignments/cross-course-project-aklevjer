@@ -3,10 +3,13 @@ import * as utils from "../utils/index.js";
 
 function showContactSuccessMsg(successMessage) {
   const contactStatus = document.querySelector(".contact-status");
-  utils.clearElement(contactStatus);
 
-  contactStatus.classList.replace("contact-status", "contact-success");
-  contactStatus.textContent = successMessage;
+  if (contactStatus) {
+    utils.clearElement(contactStatus);
+
+    contactStatus.classList.replace("contact-status", "contact-success");
+    contactStatus.textContent = successMessage;
+  }
 }
 
 function initInputListeners(inputElements) {
