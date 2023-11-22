@@ -109,7 +109,7 @@
   max-width: 300px;
 }
 
-.sale-banner-content h3 {
+.sale-banner-content h2 {
   font-size: var(--fs-xxlarge);
   text-align: center;
 }
@@ -121,7 +121,7 @@
 
 /* --------------- Best Sellers --------------- */
 
-.bestsellers h4 {
+.bestsellers h2 {
   font-size: var(--fs-xlarge);
   padding-bottom: 10px;
   border-bottom: var(--bd-blue);

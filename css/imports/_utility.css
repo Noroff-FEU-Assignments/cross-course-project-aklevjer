@@ -140,7 +140,7 @@
 }
 
 .product-container h2,
-.product-container h5,
+.product-container h3,
 .product-container span {
   font-size: var(--fs-medium);
 }

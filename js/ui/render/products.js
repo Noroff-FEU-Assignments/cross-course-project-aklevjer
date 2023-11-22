@@ -5,7 +5,7 @@ function createProductImage(imageSrc, altText) {
 }
 
 function createProductTitle(productTitle, isShopPage) {
-  return utils.createHTMLElement(isShopPage ? "h2" : "h5", null, utils.trimProductTitle(productTitle));
+  return utils.createHTMLElement(isShopPage ? "h2" : "h3", null, utils.trimProductTitle(productTitle));
 }
 
 function createProductPrice(productPrice) {
