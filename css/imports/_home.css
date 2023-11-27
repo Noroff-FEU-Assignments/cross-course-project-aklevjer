@@ -142,10 +142,10 @@
   scroll-behavior: smooth;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
-  touch-action: none;
 }
 
-.bestsellers-container::-webkit-scrollbar {
+.bestsellers-container::-webkit-scrollbar,
+.bestsellers-container .product-container:is(:nth-child(6), :nth-child(7)) {
   display: none;
 }
 

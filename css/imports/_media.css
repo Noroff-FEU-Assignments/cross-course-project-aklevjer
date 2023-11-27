@@ -26,6 +26,10 @@
     grid-auto-columns: calc((100% - 40px) / 2);
   }
 
+  .bestsellers-products .product-container:nth-child(6) {
+    display: grid;
+  }
+
   .product-container :not(:first-child) {
     margin: 10px;
   }
@@ -114,6 +118,10 @@
 
   .bestsellers-container {
     grid-auto-columns: calc((100% - 40px * 2) / 3);
+  }
+
+  .bestsellers-products .product-container:nth-child(7) {
+    display: grid;
   }
 
   /* ----------------- Shop Page ---------------- */
