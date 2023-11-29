@@ -39,6 +39,7 @@ p {
 
 label {
   font-weight: var(--fw-medium);
+  cursor: pointer;
 }
 
 strong {
