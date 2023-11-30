@@ -104,6 +104,11 @@ function initCheckoutCTA() {
   checkoutCTA.addEventListener("click", ui.clearCart);
 }
 
+function showCheckoutStages() {
+  const checkoutStages = document.querySelector(".checkout-stages");
+  checkoutStages.classList.remove("hidden");
+}
+
 export function renderCart(cart) {
   const cartContainer = document.querySelector(".cart-container");
   utils.clearElement(cartContainer);
@@ -121,4 +126,5 @@ export function renderCart(cart) {
 
   updateSubtotal(subtotal);
   initCheckoutCTA();
+  showCheckoutStages();
 }

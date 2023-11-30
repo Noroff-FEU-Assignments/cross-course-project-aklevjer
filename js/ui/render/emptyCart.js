@@ -16,7 +16,7 @@ function changeCheckoutIntoEmptyCart(emptyCartElements) {
   const checkoutStages = document.querySelector(".checkout-stages");
   utils.clearElement(checkoutStages);
 
-  checkoutStages.classList.replace("checkout-stages", "empty-cart");
+  checkoutStages.className = "empty-cart";
   checkoutStages.append(...emptyCartElements);
 }
 
