@@ -30,6 +30,10 @@
   color: var(--clr-green);
 }
 
+.disable-scroll {
+  overflow: hidden;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

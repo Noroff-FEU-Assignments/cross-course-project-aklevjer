@@ -6,7 +6,9 @@ function createProductImageContainer(productImage) {
 }
 
 function createProductImage(imageSrc, altText) {
-  return utils.createHTMLElement("img", "product-image", null, null, null, imageSrc, altText);
+  const productImage = utils.createHTMLElement("img", "product-image", null, null, null, imageSrc, altText);
+  productImage.addEventListener("click", ui.renderModal);
+  return productImage;
 }
 
 function createProductTitle(productTitle) {
