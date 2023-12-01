@@ -91,6 +91,45 @@
   }
 }
 
+/* --------------- Notification --------------- */
+
+.notification {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  opacity: 0;
+  color: var(--clr-white);
+  box-shadow: 0 -20px 50px var(--clr-dark-shadow);
+  animation: fade-in-out 3s ease-in-out;
+  background-color: var(--clr-green);
+}
+
+.notification p {
+  font-size: var(--fs-medium);
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  6.67% {
+    opacity: 1;
+  }
+  93.33% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* ---------------- Form Error ---------------- */
 
 .input-container {
@@ -122,7 +161,7 @@
 
 .product-container {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
   color: var(--clr-black);
   outline: none;
   border: var(--bd-blue);

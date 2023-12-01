@@ -149,6 +149,7 @@
 
   .product-image {
     height: 100%;
+    max-height: 550px;
   }
 
   /* --------------- Checkout Page -------------- */

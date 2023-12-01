@@ -1,17 +1,6 @@
 import * as ui from "./index.js";
 import * as utils from "../utils/index.js";
 
-function showContactSuccessMsg(successMessage) {
-  const contactStatus = document.querySelector(".contact-status");
-
-  if (contactStatus) {
-    utils.clearElement(contactStatus);
-
-    contactStatus.classList.replace("contact-status", "contact-success");
-    contactStatus.textContent = successMessage;
-  }
-}
-
 function initInputListeners(inputElements) {
   inputElements.forEach((inputElement) => {
     inputElement.addEventListener("change", () => {
@@ -35,7 +24,7 @@ function handleContactSubmit(event, inputElements) {
   });
 
   if (allInputsValid) {
-    showContactSuccessMsg("Your message was sent!");
+    ui.showNotifyMessage("Your message was sent!");
   }
 }
 

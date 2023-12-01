@@ -56,6 +56,18 @@ a.dark-link:hover {
   background-color: var(--clr-transparent);
 }
 
+.clear-blue-cta {
+  color: var(--clr-blue);
+  border: var(--bd-blue);
+  background-color: var(--clr-transparent);
+}
+
+.clear-blue-cta:hover {
+  color: var(--clr-white);
+  border-color: var(--clr-dark-blue);
+  background-color: var(--clr-dark-blue);
+}
+
 .round-cta {
   padding: 5px 10px;
   border-radius: 50%;

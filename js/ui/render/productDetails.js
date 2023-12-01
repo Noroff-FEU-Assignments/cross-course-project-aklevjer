@@ -65,6 +65,10 @@ function createProductCTA() {
   return productCTA;
 }
 
+function createCheckoutCTA() {
+  return utils.createHTMLElement("a", ["cta", "clear-blue-cta", "hidden"], "Go to checkout", null, "/pages/checkout/");
+}
+
 function createProductForm(product, productFormChildren) {
   const productForm = utils.createHTMLElement("form", null, null, productFormChildren);
 
@@ -72,10 +76,13 @@ function createProductForm(product, productFormChildren) {
     e.preventDefault();
 
     const form = e.target;
+    const checkoutCTA = productForm.querySelector(".clear-blue-cta");
+
     product.size = form.size.value;
+    checkoutCTA.classList.remove("hidden");
 
     ui.addToCart(product);
-    location.href = "/pages/checkout/";
+    ui.showNotifyMessage(`‘${utils.trimProductTitle(product.title)}’ added to cart!`);
   });
 
   return productForm;
@@ -102,7 +109,8 @@ function createProduct(product) {
   const sizeOptions = createSizeOptions(product.sizes);
   const sizeSelect = createSizeSelect(sizeOptions);
   const productCTA = createProductCTA();
-  const productFormChildren = [sizeLabel, sizeSelect, productCTA];
+  const checkoutCTA = createCheckoutCTA();
+  const productFormChildren = [sizeLabel, sizeSelect, productCTA, checkoutCTA];
   const productForm = createProductForm(product, productFormChildren);
 
   const productDetailsChildren = [productTitle, productColor, productDescription, priceStockContainer, productForm];
