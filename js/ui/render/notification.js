@@ -14,6 +14,11 @@ function createNotifyContainer(notifyChildren) {
   return notifyContainer;
 }
 
+function initNotifyMessage(notifyContainer, successIcon) {
+  successIcon.addEventListener("load", () => notifyContainer.classList.add("notification-open"), { once: true });
+  notifyContainer.addEventListener("animationend", notifyContainer.remove, { once: true });
+}
+
 export function showNotifyMessage(message) {
   const successIcon = createSuccessIcon();
   const notifyBody = createNotifyBody(message);
@@ -23,5 +28,5 @@ export function showNotifyMessage(message) {
 
   document.body.append(notifyContainer);
 
-  notifyContainer.addEventListener("animationend", notifyContainer.remove, { once: true });
+  initNotifyMessage(notifyContainer, successIcon);
 }

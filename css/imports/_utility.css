@@ -107,8 +107,11 @@
   opacity: 0;
   color: var(--clr-white);
   box-shadow: 0 -20px 50px var(--clr-dark-shadow);
-  animation: fade-in-out 3s ease-in-out;
   background-color: var(--clr-green);
+}
+
+.notification-open {
+  animation: fade-in-out 3s ease-in-out;
 }
 
 .notification p {
