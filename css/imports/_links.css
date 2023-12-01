@@ -44,6 +44,10 @@ a.dark-link:hover {
   background-color: var(--clr-dark-blue);
 }
 
+.cta:active {
+  transform: scale(0.95);
+}
+
 .white-cta {
   color: var(--clr-blue);
   border: var(--bd) var(--clr-transparent);

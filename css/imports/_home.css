@@ -166,6 +166,11 @@
   right: -19px;
 }
 
+.carousel-prev:active,
+.carousel-next:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
 .carousel-pagination {
   display: flex;
   justify-content: center;
