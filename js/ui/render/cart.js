@@ -47,8 +47,18 @@ function createProductTotal(totalPrice) {
   return productTotal;
 }
 
-function createProductDeleteBtn(product) {
-  const productDeleteBtn = utils.createHTMLElement("button", ["cta", "round-cta"], "x");
+function createProductDeleteSymbol() {
+  const productDeleteSymbol = utils.createHTMLElement("span", null, "x");
+  productDeleteSymbol.setAttribute("aria-hidden", "true");
+  return productDeleteSymbol;
+}
+
+function createProductDeleteSrText() {
+  return utils.createHTMLElement("span", "sr-only", "Remove from cart");
+}
+
+function createProductDeleteBtn(product, productDeleteBtnChildren) {
+  const productDeleteBtn = utils.createHTMLElement("button", ["cta", "round-cta"], null, productDeleteBtnChildren);
   productDeleteBtn.addEventListener("click", () => ui.removeFromCart(product));
   return productDeleteBtn;
 }
@@ -78,7 +88,10 @@ function createCartItem(product, totalPrice) {
   const productQuantity = createProductQuantity(product.quantity);
   const productTotal = createProductTotal(totalPrice);
 
-  const productDeleteBtn = createProductDeleteBtn(product);
+  const productDeleteSymbol = createProductDeleteSymbol();
+  const productDeleteSrText = createProductDeleteSrText();
+  const productDeleteBtnChildren = [productDeleteSymbol, productDeleteSrText];
+  const productDeleteBtn = createProductDeleteBtn(product, productDeleteBtnChildren);
   const productDeleteBtnContainer = createProductDeleteBtnContainer(productDeleteBtn);
 
   const cartItemContainerChildren = [productWrapper, productSize, productQuantity, productTotal, productDeleteBtnContainer];

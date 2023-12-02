@@ -20,6 +20,9 @@ function initNotifyMessage(notifyContainer, successIcon) {
 }
 
 export function showNotifyMessage(message) {
+  const notificationExist = document.querySelector(".notification");
+  if (notificationExist) return;
+
   const successIcon = createSuccessIcon();
   const notifyBody = createNotifyBody(message);
 

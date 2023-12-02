@@ -16,7 +16,7 @@ input[type="submit"],
   transition: text-shadow var(--tr-link);
 }
 
-a:not(.cta):hover,
+a:not(.cta):is(:hover, :focus),
 .accordion-header:hover {
   text-shadow: -0.5px 0 0 var(--clr-white), 0.5px 0 0 var(--clr-white);
 }
@@ -25,7 +25,7 @@ a:not(.cta):hover,
   color: var(--clr-black);
 }
 
-a.dark-link:hover {
+a.dark-link:is(:hover, :focus) {
   text-shadow: -0.5px 0 0 var(--clr-black), 0.5px 0 0 var(--clr-black);
 }
 
@@ -35,11 +35,12 @@ a.dark-link:hover {
   padding: 10px 15px;
   text-align: center;
   text-transform: uppercase;
+  outline-offset: 3px;
   border-radius: var(--bd-radius);
   background-color: var(--clr-blue);
 }
 
-.cta:hover {
+.cta:is(:hover, :focus) {
   transition-property: color, border-color, background-color;
   background-color: var(--clr-dark-blue);
 }
@@ -54,7 +55,7 @@ a.dark-link:hover {
   background-color: var(--clr-white);
 }
 
-.white-cta:hover {
+.white-cta:is(:hover, :focus) {
   color: var(--clr-white);
   border-color: var(--clr-white);
   background-color: var(--clr-transparent);
@@ -66,7 +67,7 @@ a.dark-link:hover {
   background-color: var(--clr-transparent);
 }
 
-.clear-blue-cta:hover {
+.clear-blue-cta:is(:hover, :focus) {
   color: var(--clr-white);
   border-color: var(--clr-dark-blue);
   background-color: var(--clr-dark-blue);

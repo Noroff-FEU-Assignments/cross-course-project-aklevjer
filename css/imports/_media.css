@@ -70,11 +70,12 @@
   .shopping-cart {
     margin: 0;
     padding: 0;
+    gap: 5px;
     border: none;
   }
 
-  .shopping-cart span::before {
-    content: "Cart ";
+  .cart-label::before {
+    content: "Cart";
   }
 
   .burger-icon {

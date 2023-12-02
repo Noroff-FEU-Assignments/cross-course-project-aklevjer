@@ -67,7 +67,7 @@ header {
 .shopping-cart {
   margin-inline: 20px;
   padding: 5px;
-  gap: 5px;
+  gap: 2px;
   display: flex;
   align-items: center;
   border: var(--bd-white);

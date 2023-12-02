@@ -111,7 +111,7 @@
 }
 
 .notification-open {
-  animation: fade-in-out 3s ease-in-out;
+  animation: fade-in-out 3.4s ease-in-out;
 }
 
 .notification p {
@@ -122,10 +122,10 @@
   0% {
     opacity: 0;
   }
-  6.67% {
+  5.88% {
     opacity: 1;
   }
-  93.33% {
+  94.12% {
     opacity: 1;
   }
   100% {
