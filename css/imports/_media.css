@@ -74,8 +74,8 @@
     border: none;
   }
 
-  .cart-label::before {
-    content: "Cart";
+  .cart-label {
+    display: inline;
   }
 
   .burger-icon {

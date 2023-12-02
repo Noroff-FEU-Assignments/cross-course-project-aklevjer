@@ -73,3 +73,7 @@ header {
   border: var(--bd-white);
   border-radius: var(--bd-radius);
 }
+
+.cart-label {
+  display: none;
+}
