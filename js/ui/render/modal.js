@@ -1,7 +1,17 @@
 import * as utils from "../../utils/index.js";
 
-function createModalCloseBtn() {
-  return utils.createHTMLElement("button", "modal-close-button", "x");
+function createModalCloseSymbol() {
+  const modalCloseSymbol = utils.createHTMLElement("span", null, "x");
+  modalCloseSymbol.setAttribute("aria-hidden", "true");
+  return modalCloseSymbol;
+}
+
+function createModalCloseSrText() {
+  return utils.createHTMLElement("span", "sr-only", "Close modal");
+}
+
+function createModalCloseBtn(modalCloseBtnChildren) {
+  return utils.createHTMLElement("button", "modal-close-button", null, modalCloseBtnChildren);
 }
 
 function createModalContent(modalChildren) {
@@ -34,7 +44,11 @@ function initModal(modalContainer, modalImage) {
 
 export function renderModal(event) {
   const modalImage = event.target.cloneNode();
-  const modalCloseBtn = createModalCloseBtn();
+
+  const modalCloseSymbol = createModalCloseSymbol();
+  const modalCloseSrText = createModalCloseSrText();
+  const modalCloseBtnChildren = [modalCloseSymbol, modalCloseSrText];
+  const modalCloseBtn = createModalCloseBtn(modalCloseBtnChildren);
 
   const modalChildren = [modalCloseBtn, modalImage];
   const modalContent = createModalContent(modalChildren);
