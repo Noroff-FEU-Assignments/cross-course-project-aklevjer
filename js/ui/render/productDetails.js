@@ -72,13 +72,13 @@ function createCheckoutCTA() {
 function createProductForm(product, productFormChildren) {
   const productForm = utils.createHTMLElement("form", null, null, productFormChildren);
 
-  productForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+  productForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    const form = e.target;
+    const sizeSelect = productForm.size;
     const checkoutCTA = productForm.querySelector(".clear-blue-cta");
 
-    product.size = form.size.value;
+    product.size = sizeSelect.value;
     checkoutCTA.classList.remove("hidden");
 
     ui.addToCart(product);
