@@ -6,7 +6,9 @@ import * as utils from "../../utils/index.js";
  * Inspiration: https://www.vrsofttech.com/javascript/credit-card-number-auto-format-using-javascript
  */
 function autoFormatCreditCardNumber(event) {
-  if (event.key === "Backspace") return;
+  if (event.key === "Backspace" || event.key === "Delete") {
+    return;
+  }
 
   setTimeout(() => {
     const creditCardNumber = event.target.value;
@@ -19,7 +21,9 @@ function autoFormatCreditCardNumber(event) {
 
 // Automatically format the expiry date by adding a "/" after the second digit
 function autoFormatExpiryDate(event) {
-  if (event.key === "Backspace") return;
+  if (event.key === "Backspace" || event.key === "Delete") {
+    return;
+  }
 
   setTimeout(() => {
     const expiryDate = event.target.value;
