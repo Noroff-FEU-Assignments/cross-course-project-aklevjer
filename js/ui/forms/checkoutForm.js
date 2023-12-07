@@ -2,7 +2,7 @@ import * as ui from "../index.js";
 import * as utils from "../../utils/index.js";
 
 /**
- * Automaticly format the credit card number by adding a space after every four digits
+ * Automatically format the credit card number by adding a space after every four digits
  * Inspiration: https://www.vrsofttech.com/javascript/credit-card-number-auto-format-using-javascript
  */
 function autoFormatCreditCardNumber(event) {
