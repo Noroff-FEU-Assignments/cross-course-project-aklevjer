@@ -59,7 +59,7 @@
         </ol>
       </nav>
 
-      <section class="checkout-stages hidden">
+      <form class="checkout-stages hidden">
         <h1>Complete your order now</h1>
         <section class="order-review">
           <h2>1. Order review</h2>
@@ -86,85 +86,134 @@
         <section class="shipping-info">
           <h2>2. Shipping info</h2>
           <div class="shipping-info-wrapper">
-            <form>
-              <fieldset>
-                <legend>Contact information</legend>
-                <label for="email">Email <span class="required-field">*</span></label>
-                <input type="email" id="email" name="email" placeholder="name@example.com" required />
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="12345678" />
-              </fieldset>
-              <fieldset>
-                <legend>Delivery address</legend>
-                <label for="first-name">First name <span class="required-field">*</span></label>
-                <input type="text" id="first-name" name="first-name" placeholder="Name" required />
-                <label for="last-name">Last name <span class="required-field">*</span></label>
-                <input type="text" id="last-name" name="last-name" placeholder="Lastname" required />
-                <label for="street-address">Street address <span class="required-field">*</span></label>
-                <input type="text" id="street-address" name="street-address" placeholder="Slottsplassen 1" required />
-                <div class="input-row-wrapper">
-                  <div>
-                    <label for="postcode">Postcode <span class="required-field">*</span></label>
-                    <input type="text" id="postcode" name="postcode" placeholder="1234" required />
-                  </div>
-                  <div>
-                    <label for="city">City <span class="required-field">*</span></label>
-                    <input type="text" id="city" name="city" placeholder="Oslo" required />
+            <fieldset>
+              <legend>Contact information</legend>
+
+              <label for="email">Email <span class="required-field">*</span></label>
+              <div class="input-container">
+                <input type="email" id="email" name="email" placeholder="name@example.com" aria-describedby="email-error" />
+                <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                <p class="input-error-message hidden" id="email-error" role="alert">Please enter a valid email address</p>
+              </div>
+
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="12345678" />
+            </fieldset>
+
+            <fieldset>
+              <legend>Delivery address</legend>
+
+              <label for="firstname">First name <span class="required-field">*</span></label>
+              <div class="input-container">
+                <input type="text" id="firstname" name="firstname" placeholder="Name" aria-describedby="firstname-error" />
+                <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                <p class="input-error-message hidden" id="firstname-error" role="alert">First name must be at least 2 characters</p>
+              </div>
+
+              <label for="lastname">Last name <span class="required-field">*</span></label>
+              <div class="input-container">
+                <input type="text" id="lastname" name="lastname" placeholder="Lastname" aria-describedby="lastname-error" />
+                <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                <p class="input-error-message hidden" id="lastname-error" role="alert">Last name must be at least 2 characters</p>
+              </div>
+
+              <label for="streetaddress">Street address <span class="required-field">*</span></label>
+              <div class="input-container">
+                <input type="text" id="streetaddress" name="streetaddress" placeholder="Slottsplassen 1" aria-describedby="streetaddress-error" />
+                <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                <p class="input-error-message hidden" id="streetaddress-error" role="alert">Street address must be at least 5 characters</p>
+              </div>
+
+              <div class="input-row-wrapper">
+                <div>
+                  <label for="postcode">Postcode <span class="required-field">*</span></label>
+                  <div class="input-container">
+                    <input type="text" id="postcode" name="postcode" placeholder="1234" maxlength="4" aria-describedby="postcode-error" />
+                    <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                    <p class="input-error-message hidden" id="postcode-error" role="alert">Postcode must be 4 digits</p>
                   </div>
                 </div>
-                <label for="country">Country <span class="required-field">*</span></label>
-                <input type="text" id="country" name="country" placeholder="Norway" required />
-              </fieldset>
-              <p>Required fields <span class="required-field">*</span></p>
-            </form>
+
+                <div>
+                  <label for="city">City <span class="required-field">*</span></label>
+                  <div class="input-container">
+                    <input type="text" id="city" name="city" placeholder="Oslo" aria-describedby="city-error" />
+                    <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                    <p class="input-error-message hidden" id="city-error" role="alert">City must be at least 2 characters</p>
+                  </div>
+                </div>
+              </div>
+
+              <label for="country">Country <span class="required-field">*</span></label>
+              <div class="input-container">
+                <input type="text" id="country" name="country" placeholder="Norway" aria-describedby="country-error" />
+                <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                <p class="input-error-message hidden" id="country-error" role="alert">Country must be at least 4 characters</p>
+              </div>
+            </fieldset>
+            <p>Required fields <span class="required-field">*</span></p>
           </div>
         </section>
 
         <section class="payment-method">
           <h2>3. Payment method</h2>
           <div class="payment-method-wrapper">
-            <form>
-              <fieldset class="payment-methods">
-                <legend>Choose payment</legend>
+            <fieldset class="payment-methods">
+              <legend>Choose payment</legend>
+              <div>
+                <input type="radio" id="credit-card" value="credit-card" name="payment-method" checked />
+                <label for="credit-card">
+                  <img src="/images/icons/credit_card_icon.svg" alt="Credit card icon" class="icon" aria-hidden="true" />
+                  <span>Credit Card</span>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="paypal" value="paypal" name="payment-method" />
+                <label for="paypal">
+                  <img src="/images/icons/paypal_p_icon.svg" alt="Paypal icon" class="icon" aria-hidden="true" />
+                  <span>PayPal</span>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="klarna" value="klarna" name="payment-method" />
+                <label for="klarna">
+                  <img src="/images/icons/klarna_k_icon.svg" alt="Klarna icon" class="icon" aria-hidden="true" />
+                  <span>Klarna</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Credit card</legend>
+
+              <label for="creditcardnumber">Credit Card <span class="required-field">*</span></label>
+              <div class="input-container">
+                <input type="text" id="creditcardnumber" name="creditcardnumber" placeholder="1234 5678 9012 3456" maxlength="19" aria-describedby="creditcardnumber-error" />
+                <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                <p class="input-error-message hidden" id="creditcardnumber-error" role="alert">Credit card number must be 16 digits</p>
+              </div>
+
+              <div class="input-row-wrapper">
                 <div>
-                  <input type="radio" id="credit-card" value="credit-card" name="payment-method" checked />
-                  <label for="credit-card">
-                    <img src="/images/icons/credit_card_icon.svg" alt="Credit card icon" class="icon" aria-hidden="true" />
-                    <span>Credit Card</span>
-                  </label>
-                </div>
-                <div>
-                  <input type="radio" id="paypal" value="paypal" name="payment-method" />
-                  <label for="paypal">
-                    <img src="/images/icons/paypal_p_icon.svg" alt="Paypal icon" class="icon" aria-hidden="true" />
-                    <span>PayPal</span>
-                  </label>
-                </div>
-                <div>
-                  <input type="radio" id="klarna" value="klarna" name="payment-method" />
-                  <label for="klarna">
-                    <img src="/images/icons/klarna_k_icon.svg" alt="Klarna icon" class="icon" aria-hidden="true" />
-                    <span>Klarna</span>
-                  </label>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>Credit card</legend>
-                <label for="credit-card-number">Credit Card <span class="required-field">*</span></label>
-                <input type="text" id="credit-card-number" name="credit-card-number" placeholder="1234 5678 9012 3456" required />
-                <div class="input-row-wrapper">
-                  <div>
-                    <label for="exp-date">Expiry date <span class="required-field">*</span></label>
-                    <input type="text" id="exp-date" name="exp-date" placeholder="MM/YY" required />
+                  <label for="expdate">Expiry date <span class="required-field">*</span></label>
+                  <div class="input-container">
+                    <input type="text" id="expdate" name="expdate" placeholder="MM/YY" maxlength="5" aria-describedby="expdate-error" />
+                    <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                    <p class="input-error-message hidden" id="expdate-error" role="alert">Please enter a valid expiry date (MM/YY)</p>
                   </div>
-                  <div>
-                    <label for="cvv">CVV <span class="required-field">*</span></label>
-                    <input type="text" id="cvv" name="cvv" placeholder="123" required />
+                </div>
+
+                <div>
+                  <label for="cvv">CVV <span class="required-field">*</span></label>
+                  <div class="input-container">
+                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" aria-describedby="cvv-error" />
+                    <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+                    <p class="input-error-message hidden" id="cvv-error" role="alert">CVV must be 3 digits</p>
                   </div>
                 </div>
-              </fieldset>
-              <p>Required fields <span class="required-field">*</span></p>
-            </form>
+              </div>
+            </fieldset>
+            <p>Required fields <span class="required-field">*</span></p>
           </div>
         </section>
 
@@ -191,10 +240,10 @@
                 </tr>
               </tbody>
             </table>
-            <a href="/pages/checkout/success/" class="cta">Checkout now</a>
+            <input type="submit" value="Checkout now" class="cta" />
           </div>
         </section>
-      </section>
+      </form>
     </main>
 
     <footer>

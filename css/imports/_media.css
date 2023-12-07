@@ -175,6 +175,8 @@
 
   .shipping-info {
     grid-area: shipping-info;
+    display: flex;
+    flex-direction: column;
   }
 
   .payment-method {
@@ -183,6 +185,7 @@
 
   .order-summary {
     grid-area: order-summary;
+    margin-top: auto;
   }
 
   .order-review-table thead th:not(:first-child) {
@@ -207,6 +210,10 @@
 
   .shipping-info h2::after {
     content: "rmation";
+  }
+
+  .shipping-info-wrapper {
+    flex: 1;
   }
 
   /* --------------- About Us Page -------------- */

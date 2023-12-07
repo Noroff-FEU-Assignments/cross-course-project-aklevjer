@@ -17,8 +17,8 @@
   border-radius: var(--bd-radius);
 }
 
-.shipping-info-wrapper > form,
-.payment-method-wrapper > form {
+.shipping-info-wrapper,
+.payment-method-wrapper {
   padding: 10px clamp(15px, 5vw, 60px) 25px;
 }
 
@@ -118,7 +118,7 @@ table td {
 
 .order-summary-wrapper .cta {
   display: inline-block;
-  margin-top: 10px;
+  margin-block: 10px 0;
   padding: 15px 60px;
 }
 

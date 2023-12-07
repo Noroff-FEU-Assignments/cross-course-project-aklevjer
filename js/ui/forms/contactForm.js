@@ -1,5 +1,5 @@
-import * as ui from "./index.js";
-import * as utils from "../utils/index.js";
+import * as ui from "../index.js";
+import * as utils from "../../utils/index.js";
 
 function initInputListeners(inputElements) {
   inputElements.forEach((inputElement) => {

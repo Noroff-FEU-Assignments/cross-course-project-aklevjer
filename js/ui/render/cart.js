@@ -112,11 +112,6 @@ function updateSubtotal(subtotal) {
   orderSummaryTotal.textContent = `$${subtotal}`;
 }
 
-function initCheckoutCTA() {
-  const checkoutCTA = document.querySelector(".order-summary-wrapper .cta");
-  checkoutCTA.addEventListener("click", ui.clearCart);
-}
-
 function showCheckoutStages() {
   const checkoutStages = document.querySelector(".checkout-stages");
   checkoutStages.classList.remove("hidden");
@@ -138,6 +133,5 @@ export function renderCart(cart) {
   });
 
   updateSubtotal(subtotal);
-  initCheckoutCTA();
   showCheckoutStages();
 }
