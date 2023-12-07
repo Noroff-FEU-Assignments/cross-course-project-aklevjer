@@ -68,7 +68,6 @@ function handleCheckoutSubmit(event, inputElements) {
 
 export function initCheckoutForm() {
   const checkoutForm = document.querySelector(".checkout-stages");
-  // prettier-ignore
   const inputElements = [
     checkoutForm.email,
     checkoutForm.firstname,
