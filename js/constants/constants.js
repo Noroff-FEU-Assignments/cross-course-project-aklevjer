@@ -1,5 +1,7 @@
 // API
-export const apiUrl = "https://api.noroff.dev/api/v1/rainy-days/";
+export const apiUrl = "http://rainy-days.local/wp-json/wc/store/products";
+export const apiParamsAll = "?per_page=100";
+export const apiParamsFeatured = "?featured=true";
 
 // localStorage
 export const storageKey = "cart";
