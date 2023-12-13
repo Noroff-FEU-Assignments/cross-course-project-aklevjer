@@ -19,12 +19,9 @@ function createProductColor(productColor) {
   return utils.createHTMLElement("p", "product-color", productColor);
 }
 
-function createProductDescription(productDescription) {
-  return utils.createHTMLElement("p", null, productDescription);
-}
-
 function createProductPrice(productPrice) {
-  return utils.createHTMLElement("span", null, `$${productPrice}`);
+  const productPriceDollars = (productPrice / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
+  return utils.createHTMLElement("span", null, productPriceDollars);
 }
 
 function createProductStock() {
@@ -43,8 +40,8 @@ function createSizeLabel() {
 
 function createSizeOptions(sizes) {
   const sizeOptions = sizes.map((size) => {
-    const sizeOption = utils.createHTMLElement("option", null, size);
-    sizeOption.value = size;
+    const sizeOption = utils.createHTMLElement("option", null, size.name);
+    sizeOption.value = size.name;
     return sizeOption;
   });
 
@@ -92,28 +89,40 @@ function createProductDetailsContainer(productDetailsChildren) {
   return utils.createHTMLElement("div", "product-specific-content", null, productDetailsChildren);
 }
 
+function findProductColor(product) {
+  const colorAttribute = product.attributes.find((attribute) => attribute.name === "Color");
+  return colorAttribute ? colorAttribute.terms[0].name : "Unknown";
+}
+
+function findProductSizes(product) {
+  const sizeAttribute = product.attributes.find((attribute) => attribute.name === "Size");
+  return sizeAttribute ? sizeAttribute.terms : [];
+}
+
 function createProduct(product) {
-  const productImage = createProductImage(product.image, product.title);
+  const productImage = createProductImage(product.images[0].src, product.images[0].alt);
   const productImageContainer = createProductImageContainer(productImage);
 
-  const productTitle = createProductTitle(product.title);
-  const productColor = createProductColor(product.baseColor);
-  const productDescription = createProductDescription(product.description);
+  const productTitle = createProductTitle(product.name);
+  const productColorName = findProductColor(product);
+  const productColor = createProductColor(productColorName);
+  const productDescriptions = utils.parseHTML(product.description);
 
-  const productPrice = createProductPrice(product.onSale ? product.discountedPrice : product.price);
+  const productPrice = createProductPrice(product.prices.price);
   const productStock = createProductStock();
   const priceStockChildren = [productPrice, productStock];
   const priceStockContainer = createPriceStockContainer(priceStockChildren);
 
   const sizeLabel = createSizeLabel();
-  const sizeOptions = createSizeOptions(product.sizes);
+  const sizes = findProductSizes(product);
+  const sizeOptions = createSizeOptions(sizes);
   const sizeSelect = createSizeSelect(sizeOptions);
   const productCTA = createProductCTA();
   const checkoutCTA = createCheckoutCTA();
   const productFormChildren = [sizeLabel, sizeSelect, productCTA, checkoutCTA];
   const productForm = createProductForm(product, productFormChildren);
 
-  const productDetailsChildren = [productTitle, productColor, productDescription, priceStockContainer, productForm];
+  const productDetailsChildren = [productTitle, productColor, ...productDescriptions, priceStockContainer, productForm];
   const productDetailsContainer = createProductDetailsContainer(productDetailsChildren);
 
   const productDetailsElements = [productImageContainer, productDetailsContainer];
