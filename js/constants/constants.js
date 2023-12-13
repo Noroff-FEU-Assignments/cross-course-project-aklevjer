@@ -1,5 +1,5 @@
 // API
-export const apiUrl = "http://rainy-days.local/wp-json/wc/store/products";
+export const apiUrl = "https://sinnsykt.net/rainy-days/wp-json/wc/store/products";
 export const apiParamsAll = "?per_page=100";
 export const apiParamsFeatured = "?featured=true";
 
