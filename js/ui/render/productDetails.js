@@ -12,7 +12,7 @@ function createProductImage(imageSrc, altText) {
 }
 
 function createProductTitle(productTitle) {
-  return utils.createHTMLElement("h1", null, utils.trimProductTitle(productTitle));
+  return utils.createHTMLElement("h1", null, productTitle);
 }
 
 function createProductColor(productColor) {
@@ -82,7 +82,7 @@ function createProductForm(product, productFormChildren) {
     checkoutCTA.classList.remove("hidden");
 
     ui.addToCart(product);
-    ui.showNotifyMessage(`‘${utils.trimProductTitle(product.title)}’ added to cart!`);
+    ui.showNotifyMessage(`‘${product.name}’ added to cart!`);
   });
 
   return productForm;

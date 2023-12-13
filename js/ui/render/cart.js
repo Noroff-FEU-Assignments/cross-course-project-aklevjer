@@ -6,7 +6,7 @@ function createProductImage(imageSrc, altText) {
 }
 
 function createProductTitle(productTitle) {
-  return utils.createHTMLElement("h3", null, utils.trimProductTitle(productTitle));
+  return utils.createHTMLElement("h3", null, productTitle);
 }
 
 function createProductColor(productColor) {
