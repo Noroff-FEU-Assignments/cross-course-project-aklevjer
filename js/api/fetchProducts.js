@@ -1,7 +1,7 @@
 import * as constants from "../constants/index.js";
 
-export async function fetchProducts() {
-  const response = await fetch(constants.apiUrl);
+export async function fetchProducts(apiParams) {
+  const response = await fetch(constants.apiUrl + apiParams);
   const products = await response.json();
 
   if (!response.ok) {
@@ -12,7 +12,7 @@ export async function fetchProducts() {
 }
 
 export async function fetchProductById(productId) {
-  const response = await fetch(constants.apiUrl + productId);
+  const response = await fetch(constants.apiUrl + "/" + productId);
   const product = await response.json();
 
   if (!response.ok) {
