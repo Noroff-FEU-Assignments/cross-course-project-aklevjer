@@ -33,12 +33,6 @@
   .product-container :not(:first-child) {
     margin: 10px;
   }
-
-  /* --------------- Product Page --------------- */
-
-  .product-specific-content h1 {
-    text-align: left;
-  }
 }
 
 @media (min-width: 700px) {
@@ -134,7 +128,7 @@
   /* --------------- Product Page --------------- */
 
   .product-specific {
-    min-height: 540px;
+    min-height: 550px;
     flex-direction: row;
     justify-content: space-between;
   }

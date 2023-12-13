@@ -19,6 +19,7 @@
 .product-specific-content h1 {
   padding-bottom: 10px;
   font-size: 1.5rem;
+  text-align: left;
   border-bottom: var(--bd-blue);
 }
 
