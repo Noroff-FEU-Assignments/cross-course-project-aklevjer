@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="/css/styles.css" />
     <script src="/js/index.js" type="module"></script>
+    <!-- Hotjar Tracking Code for https://rainy-days-ixd-ak.netlify.app -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3737613, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <header>
@@ -26,7 +42,9 @@
           </ul>
         </nav>
         <a href="/pages/checkout/" class="shopping-cart">
-          <img src="/images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" />
+          <img src="/images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" aria-hidden="true" />
+          <span class="cart-label" aria-hidden="true">Cart</span>
+          <span class="sr-only">Items in cart</span>
           <span class="cart-count"></span>
         </a>
       </div>
@@ -74,17 +92,38 @@
         <section class="quick-contact">
           <h2>Quick contact</h2>
           <p class="contact-us-description">Have a question or feedback for us? Let us know by filling out the form below and we'll be happy to help.</p>
-          <form>
+          <form class="contact-form">
             <label for="name">Name <span class="required-field">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Name" required />
+            <div class="input-container">
+              <input type="text" id="name" name="name" placeholder="Name" aria-describedby="name-error" />
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden" id="name-error" role="alert">Name must be at least 2 characters</p>
+            </div>
+
             <label for="email">Email <span class="required-field">*</span></label>
-            <input type="email" id="email" name="email" placeholder="name@example.com" required />
+            <div class="input-container">
+              <input type="email" id="email" name="email" placeholder="name@example.com" aria-describedby="email-error" />
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden" id="email-error" role="alert">Please enter a valid email address</p>
+            </div>
+
             <label for="phone">Phone</label>
             <input type="tel" id="phone" name="phone" placeholder="12345678" />
+
             <label for="subject">Subject <span class="required-field">*</span></label>
-            <input type="text" id="subject" name="subject" placeholder="Subject" required />
+            <div class="input-container">
+              <input type="text" id="subject" name="subject" placeholder="Subject" aria-describedby="subject-error" />
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden" id="subject-error" role="alert">Subject must be at least 10 characters</p>
+            </div>
+
             <label for="message">Message <span class="required-field">*</span></label>
-            <textarea id="message" name="message" placeholder="Message" required></textarea>
+            <div class="input-container">
+              <textarea id="message" name="message" placeholder="Message" aria-describedby="message-error"></textarea>
+              <img src="/images/icons/error_icon_small.svg" alt="Error icon" class="input-error-icon icon hidden" />
+              <p class="input-error-message hidden" id="message-error" role="alert">Message must be at least 25 characters</p>
+            </div>
+
             <input type="submit" value="Send message" class="cta" />
             <p>Required fields <span class="required-field">*</span></p>
           </form>
@@ -96,20 +135,20 @@
           <ul class="links-list social-icons connect-icons">
             <li>
               <a href="https://www.facebook.com" target="_blank" class="dark-link">
-                <img src="/images/icons/facebook_icon_large.svg" alt="Facebook icon" class="icon" />
-                Facebook
+                <img src="/images/icons/facebook_icon_large.svg" alt="Facebook icon" class="icon" aria-hidden="true" />
+                <span>Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank" class="dark-link">
-                <img src="/images/icons/instagram_icon_large.svg" alt="Instagram icon" class="icon" />
-                Instagram
+                <img src="/images/icons/instagram_icon_large.svg" alt="Instagram icon" class="icon" aria-hidden="true" />
+                <span>Instagram</span>
               </a>
             </li>
             <li>
               <a href="https://www.youtube.com/" target="_blank" class="dark-link">
-                <img src="/images/icons/youtube_icon_large.svg" alt="Youtube icon" class="icon" />
-                Youtube
+                <img src="/images/icons/youtube_icon_large.svg" alt="Youtube icon" class="icon" aria-hidden="true" />
+                <span>Youtube</span>
               </a>
             </li>
           </ul>
@@ -138,20 +177,20 @@
           <ul class="links-list social-icons footer-icons">
             <li>
               <a href="https://www.facebook.com" target="_blank">
-                <img src="/images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" />
-                Facebook
+                <img src="/images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" aria-hidden="true" />
+                <span>Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank">
-                <img src="/images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" />
-                Instagram
+                <img src="/images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" aria-hidden="true" />
+                <span>Instagram</span>
               </a>
             </li>
             <li>
               <a href="https://www.youtube.com/" target="_blank">
-                <img src="/images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" />
-                Youtube
+                <img src="/images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" aria-hidden="true" />
+                <span>Youtube</span>
               </a>
             </li>
           </ul>

@@ -109,7 +109,7 @@
   max-width: 300px;
 }
 
-.sale-banner-content h3 {
+.sale-banner-content h2 {
   font-size: var(--fs-xxlarge);
   text-align: center;
 }
@@ -121,7 +121,7 @@
 
 /* --------------- Best Sellers --------------- */
 
-.bestsellers h4 {
+.bestsellers h2 {
   font-size: var(--fs-xlarge);
   padding-bottom: 10px;
   border-bottom: var(--bd-blue);
@@ -142,10 +142,10 @@
   scroll-behavior: smooth;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
-  touch-action: none;
 }
 
-.bestsellers-container::-webkit-scrollbar {
+.bestsellers-container::-webkit-scrollbar,
+.bestsellers-container .product-container:is(:nth-child(6), :nth-child(7)) {
   display: none;
 }
 
@@ -164,6 +164,11 @@
 
 .carousel-next {
   right: -19px;
+}
+
+.carousel-prev:active,
+.carousel-next:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .carousel-pagination {

@@ -6,23 +6,22 @@ function createProductImageContainer(productImage) {
 }
 
 function createProductImage(imageSrc, altText) {
-  return utils.createHTMLElement("img", "product-image", null, null, null, imageSrc, altText);
+  const productImage = utils.createHTMLElement("img", "product-image", null, null, null, imageSrc, altText);
+  productImage.addEventListener("click", ui.renderModal);
+  return productImage;
 }
 
 function createProductTitle(productTitle) {
-  return utils.createHTMLElement("h1", null, utils.trimProductTitle(productTitle));
+  return utils.createHTMLElement("h1", null, productTitle);
 }
 
 function createProductColor(productColor) {
   return utils.createHTMLElement("p", "product-color", productColor);
 }
 
-function createProductDescription(productDescription) {
-  return utils.createHTMLElement("p", null, productDescription);
-}
-
 function createProductPrice(productPrice) {
-  return utils.createHTMLElement("span", null, `$${productPrice}`);
+  const productPriceDollars = (productPrice / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
+  return utils.createHTMLElement("span", null, productPriceDollars);
 }
 
 function createProductStock() {
@@ -41,8 +40,8 @@ function createSizeLabel() {
 
 function createSizeOptions(sizes) {
   const sizeOptions = sizes.map((size) => {
-    const sizeOption = utils.createHTMLElement("option", null, size);
-    sizeOption.value = size;
+    const sizeOption = utils.createHTMLElement("option", null, size.name);
+    sizeOption.value = size.name;
     return sizeOption;
   });
 
@@ -63,17 +62,24 @@ function createProductCTA() {
   return productCTA;
 }
 
+function createCheckoutCTA() {
+  return utils.createHTMLElement("a", ["cta", "clear-blue-cta", "hidden"], "Go to checkout", null, "/pages/checkout/");
+}
+
 function createProductForm(product, productFormChildren) {
   const productForm = utils.createHTMLElement("form", null, null, productFormChildren);
 
-  productForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+  productForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    const form = e.target;
-    product.size = form.size.value;
+    const sizeSelect = productForm.size;
+    const checkoutCTA = productForm.querySelector(".clear-blue-cta");
+
+    product.size = sizeSelect.value;
+    checkoutCTA.classList.remove("hidden");
 
     ui.addToCart(product);
-    location.href = "/pages/checkout/";
+    ui.showNotifyMessage(`‘${product.name}’ added to cart!`);
   });
 
   return productForm;
@@ -83,27 +89,40 @@ function createProductDetailsContainer(productDetailsChildren) {
   return utils.createHTMLElement("div", "product-specific-content", null, productDetailsChildren);
 }
 
+function findProductColor(product) {
+  const colorAttribute = product.attributes.find((attribute) => attribute.name === "Color");
+  return colorAttribute ? colorAttribute.terms[0].name : "Unknown";
+}
+
+function findProductSizes(product) {
+  const sizeAttribute = product.attributes.find((attribute) => attribute.name === "Size");
+  return sizeAttribute ? sizeAttribute.terms : [];
+}
+
 function createProduct(product) {
-  const productImage = createProductImage(product.image, product.title);
+  const productImage = createProductImage(product.images[0].src, product.images[0].alt);
   const productImageContainer = createProductImageContainer(productImage);
 
-  const productTitle = createProductTitle(product.title);
-  const productColor = createProductColor(product.baseColor);
-  const productDescription = createProductDescription(product.description);
+  const productTitle = createProductTitle(product.name);
+  const productColorName = findProductColor(product);
+  const productColor = createProductColor(productColorName);
+  const productDescriptions = utils.parseHTML(product.description);
 
-  const productPrice = createProductPrice(product.onSale ? product.discountedPrice : product.price);
+  const productPrice = createProductPrice(product.prices.price);
   const productStock = createProductStock();
   const priceStockChildren = [productPrice, productStock];
   const priceStockContainer = createPriceStockContainer(priceStockChildren);
 
   const sizeLabel = createSizeLabel();
-  const sizeOptions = createSizeOptions(product.sizes);
+  const sizes = findProductSizes(product);
+  const sizeOptions = createSizeOptions(sizes);
   const sizeSelect = createSizeSelect(sizeOptions);
   const productCTA = createProductCTA();
-  const productFormChildren = [sizeLabel, sizeSelect, productCTA];
+  const checkoutCTA = createCheckoutCTA();
+  const productFormChildren = [sizeLabel, sizeSelect, productCTA, checkoutCTA];
   const productForm = createProductForm(product, productFormChildren);
 
-  const productDetailsChildren = [productTitle, productColor, productDescription, priceStockContainer, productForm];
+  const productDetailsChildren = [productTitle, productColor, ...productDescriptions, priceStockContainer, productForm];
   const productDetailsContainer = createProductDetailsContainer(productDetailsChildren);
 
   const productDetailsElements = [productImageContainer, productDetailsContainer];

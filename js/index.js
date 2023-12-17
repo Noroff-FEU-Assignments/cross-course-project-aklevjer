@@ -13,6 +13,9 @@ switch (location.pathname) {
   case "/pages/shop/product/":
     pages.productPage();
     break;
+  case "/pages/contact/":
+    pages.contactPage();
+    break;
   case "/pages/checkout/":
     pages.checkoutPage();
     break;

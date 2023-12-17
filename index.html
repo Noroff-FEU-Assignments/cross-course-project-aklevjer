@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="/css/styles.css" />
     <script src="/js/index.js" type="module"></script>
+    <!-- Hotjar Tracking Code for https://rainy-days-ixd-ak.netlify.app -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3737613, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <header>
@@ -26,7 +42,9 @@
           </ul>
         </nav>
         <a href="/pages/checkout/" class="shopping-cart">
-          <img src="/images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" />
+          <img src="/images/icons/shopping_cart_icon.svg" alt="Shopping cart icon" class="icon" aria-hidden="true" />
+          <span class="cart-label" aria-hidden="true">Cart</span>
+          <span class="sr-only">Items in cart</span>
           <span class="cart-count"></span>
         </a>
       </div>
@@ -71,20 +89,26 @@
       <section class="sale-banner maxw-container">
         <img src="/images/graphics/banner_procentage.svg" alt="Up to 40% off promotion" class="sale-banner-image" />
         <div class="sale-banner-content">
-          <h3>Up to 40% off selected rain jackets</h3>
+          <h2>Up to 40% off selected rain jackets</h2>
           <p>Don't let the rain catch you unprepared. Shop our sale now and save up to 40%!</p>
           <a href="/pages/shop/" class="cta white-cta">Explore deals</a>
         </div>
       </section>
 
       <section class="bestsellers maxw-container">
-        <h4>Shop our bestsellers</h4>
+        <h2>Shop our bestsellers</h2>
         <div class="bestsellers-products">
           <div class="bestsellers-container">
             <div class="loading-spinner"></div>
           </div>
-          <button class="carousel-prev cta round-cta">&#x276E;</button>
-          <button class="carousel-next cta round-cta">&#x276F;</button>
+          <button class="carousel-prev cta round-cta">
+            <span aria-hidden="true">&#x276E;</span>
+            <span class="sr-only">Previous slide</span>
+          </button>
+          <button class="carousel-next cta round-cta">
+            <span aria-hidden="true">&#x276F;</span>
+            <span class="sr-only">Next slide</span>
+          </button>
         </div>
         <div class="carousel-pagination">
           <button class="cta round-cta active-pagination"><span class="sr-only">Slide 1</span></button>
@@ -117,20 +141,20 @@
           <ul class="links-list social-icons footer-icons">
             <li>
               <a href="https://www.facebook.com" target="_blank">
-                <img src="/images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" />
-                Facebook
+                <img src="/images/icons/facebook_icon_small.svg" alt="Facebook icon" class="icon" aria-hidden="true" />
+                <span>Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank">
-                <img src="/images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" />
-                Instagram
+                <img src="/images/icons/instagram_icon_small.svg" alt="Instagram icon" class="icon" aria-hidden="true" />
+                <span>Instagram</span>
               </a>
             </li>
             <li>
               <a href="https://www.youtube.com/" target="_blank">
-                <img src="/images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" />
-                Youtube
+                <img src="/images/icons/youtube_icon_small.svg" alt="Youtube icon" class="icon" aria-hidden="true" />
+                <span>Youtube</span>
               </a>
             </li>
           </ul>

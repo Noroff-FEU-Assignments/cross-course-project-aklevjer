@@ -6,6 +6,7 @@ export function checkoutPage() {
 
   if (cart.length) {
     ui.renderCart(cart);
+    ui.initCheckoutForm();
   } else {
     ui.renderEmptyCart();
   }

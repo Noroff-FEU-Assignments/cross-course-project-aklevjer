@@ -15,6 +15,7 @@
   --clr-red: #b50000;
   --clr-transparent: rgba(0, 0, 0, 0);
   --clr-dark-shadow: rgba(0, 0, 0, 0.3);
+  --clr-darker-shadow: rgba(0, 0, 0, 0.7);
 
   --bd: 1px solid;
   --bd-radius: 5px;
@@ -25,7 +26,9 @@
   --tr-link: 125ms linear;
   --tr-dropdown: 250ms ease;
   --tr-accordion: 300ms ease;
+  --tr-modal: 200ms ease-in-out;
 
+  --fs-small: 0.9375rem;
   --fs-normal: 1rem;
   --fs-medium: 1.1rem;
   --fs-large: 1.2rem;

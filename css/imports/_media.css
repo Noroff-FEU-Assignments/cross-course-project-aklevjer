@@ -26,14 +26,12 @@
     grid-auto-columns: calc((100% - 40px) / 2);
   }
 
-  .product-container :not(:first-child) {
-    margin: 10px;
+  .bestsellers-products .product-container:nth-child(6) {
+    display: grid;
   }
 
-  /* --------------- Product Page --------------- */
-
-  .product-specific-content h1 {
-    text-align: left;
+  .product-container :not(:first-child) {
+    margin: 10px;
   }
 }
 
@@ -66,11 +64,12 @@
   .shopping-cart {
     margin: 0;
     padding: 0;
+    gap: 5px;
     border: none;
   }
 
-  .shopping-cart span::before {
-    content: "Cart ";
+  .cart-label {
+    display: inline;
   }
 
   .burger-icon {
@@ -106,7 +105,7 @@
     grid-column: 4 / 5;
   }
 
-  .sale-banner-content h3 {
+  .sale-banner-content h2 {
     text-align: left;
   }
 
@@ -114,6 +113,10 @@
 
   .bestsellers-container {
     grid-auto-columns: calc((100% - 40px * 2) / 3);
+  }
+
+  .bestsellers-products .product-container:nth-child(7) {
+    display: grid;
   }
 
   /* ----------------- Shop Page ---------------- */
@@ -125,7 +128,7 @@
   /* --------------- Product Page --------------- */
 
   .product-specific {
-    min-height: 540px;
+    min-height: 550px;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -141,6 +144,7 @@
 
   .product-image {
     height: 100%;
+    max-height: 550px;
   }
 
   /* --------------- Checkout Page -------------- */
@@ -165,6 +169,8 @@
 
   .shipping-info {
     grid-area: shipping-info;
+    display: flex;
+    flex-direction: column;
   }
 
   .payment-method {
@@ -173,6 +179,7 @@
 
   .order-summary {
     grid-area: order-summary;
+    margin-top: auto;
   }
 
   .order-review-table thead th:not(:first-child) {
@@ -197,6 +204,10 @@
 
   .shipping-info h2::after {
     content: "rmation";
+  }
+
+  .shipping-info-wrapper {
+    flex: 1;
   }
 
   /* --------------- About Us Page -------------- */

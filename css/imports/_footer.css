@@ -118,7 +118,7 @@ footer {
   transition: box-shadow var(--tr-link);
 }
 
-.footer-icons a:hover > .icon {
+.footer-icons a:is(:hover, :focus) > .icon {
   box-shadow: inset 0 0 0 2px var(--clr-white);
 }
 
@@ -147,7 +147,7 @@ footer {
   background-color: var(--clr-dark-blue);
 }
 
-.newsletter input[type="submit"]:hover {
+.newsletter input[type="submit"]:is(:hover, :focus) {
   background-color: var(--clr-darker-blue);
 }
 

@@ -15,12 +15,21 @@ function updatePagination() {
   paginationBtns[currentPos].classList.add("active-pagination");
 }
 
+// Monitor the scroll event to update the current position and pagination
+function monitorScroll(event) {
+  const slider = event.target;
+  const slideItemWidth = slider.firstElementChild.offsetWidth;
+  const newPosition = slider.scrollLeft;
+
+  currentPos = Math.round(newPosition / (slideItemWidth + constants.slideGap));
+  updatePagination();
+}
+
 function updateSlider() {
   const slider = document.querySelector(".bestsellers-container");
-  const slideItemWidth = slider.querySelector(".product-container").offsetWidth;
+  const slideItemWidth = slider.firstElementChild.offsetWidth;
 
   slider.scrollLeft = currentPos * (slideItemWidth + constants.slideGap);
-  updatePagination();
 }
 
 function goToSlidePos(slidePos) {
@@ -45,12 +54,14 @@ function nextSlide() {
 }
 
 export function initCarousel() {
+  const slider = document.querySelector(".bestsellers-container");
   const prevBtn = document.querySelector(".carousel-prev");
   const nextBtn = document.querySelector(".carousel-next");
   const paginationBtns = document.querySelectorAll(".carousel-pagination button");
 
   prevBtn.addEventListener("click", prevSlide);
   nextBtn.addEventListener("click", nextSlide);
+  slider.addEventListener("scroll", monitorScroll);
 
   paginationBtns.forEach((btn, i) => {
     btn.addEventListener("click", () => goToSlidePos(i));

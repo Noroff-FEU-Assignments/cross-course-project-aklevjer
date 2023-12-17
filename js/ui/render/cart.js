@@ -6,7 +6,7 @@ function createProductImage(imageSrc, altText) {
 }
 
 function createProductTitle(productTitle) {
-  return utils.createHTMLElement("h3", null, utils.trimProductTitle(productTitle));
+  return utils.createHTMLElement("h3", null, productTitle);
 }
 
 function createProductColor(productColor) {
@@ -42,13 +42,24 @@ function createProductQuantity(quantity) {
 }
 
 function createProductTotal(totalPrice) {
-  const productTotal = utils.createHTMLElement("td", null, `$${totalPrice.toFixed(2)}`);
+  const productTotalDollars = totalPrice.toLocaleString("en-US", { style: "currency", currency: "USD" });
+  const productTotal = utils.createHTMLElement("td", null, productTotalDollars);
   productTotal.dataset.label = "Total";
   return productTotal;
 }
 
-function createProductDeleteBtn(product) {
-  const productDeleteBtn = utils.createHTMLElement("button", ["cta", "round-cta"], "x");
+function createProductDeleteSymbol() {
+  const productDeleteSymbol = utils.createHTMLElement("span", null, "x");
+  productDeleteSymbol.setAttribute("aria-hidden", "true");
+  return productDeleteSymbol;
+}
+
+function createProductDeleteSrText() {
+  return utils.createHTMLElement("span", "sr-only", "Remove from cart");
+}
+
+function createProductDeleteBtn(product, productDeleteBtnChildren) {
+  const productDeleteBtn = utils.createHTMLElement("button", ["cta", "round-cta"], null, productDeleteBtnChildren);
   productDeleteBtn.addEventListener("click", () => ui.removeFromCart(product));
   return productDeleteBtn;
 }
@@ -61,11 +72,17 @@ function createCartItemContainer(cartItemContainerChildren) {
   return utils.createHTMLElement("tr", null, null, cartItemContainerChildren);
 }
 
-function createCartItem(product, totalPrice) {
-  const productImage = createProductImage(product.image, product.title);
+function findProductColor(product) {
+  const colorAttribute = product.attributes.find((attribute) => attribute.name === "Color");
+  return colorAttribute ? colorAttribute.terms[0].name : "Unknown";
+}
 
-  const productTitle = createProductTitle(product.title);
-  const productColor = createProductColor(product.baseColor);
+function createCartItem(product, totalPrice) {
+  const productImage = createProductImage(product.images[0].src, product.images[0].alt);
+
+  const productTitle = createProductTitle(product.name);
+  const productColorName = findProductColor(product);
+  const productColor = createProductColor(productColorName);
   const productStock = createProductStock();
   const productInfoContainerChildren = [productTitle, productColor, productStock];
   const productInfoContainer = createProductInfoContainer(productInfoContainerChildren);
@@ -78,7 +95,10 @@ function createCartItem(product, totalPrice) {
   const productQuantity = createProductQuantity(product.quantity);
   const productTotal = createProductTotal(totalPrice);
 
-  const productDeleteBtn = createProductDeleteBtn(product);
+  const productDeleteSymbol = createProductDeleteSymbol();
+  const productDeleteSrText = createProductDeleteSrText();
+  const productDeleteBtnChildren = [productDeleteSymbol, productDeleteSrText];
+  const productDeleteBtn = createProductDeleteBtn(product, productDeleteBtnChildren);
   const productDeleteBtnContainer = createProductDeleteBtnContainer(productDeleteBtn);
 
   const cartItemContainerChildren = [productWrapper, productSize, productQuantity, productTotal, productDeleteBtnContainer];
@@ -92,16 +112,16 @@ function updateSubtotal(subtotal) {
   const orderSummarySubtotal = document.querySelector(".order-summary-subtotal");
   const orderSummaryTotal = document.querySelector(".order-summary-total");
 
-  subtotal = subtotal.toFixed(2);
+  subtotal = subtotal.toLocaleString("en-US", { style: "currency", currency: "USD" });
 
-  orderReviewSubtotal.textContent = `Subtotal: $${subtotal}`;
-  orderSummarySubtotal.textContent = `$${subtotal}`;
-  orderSummaryTotal.textContent = `$${subtotal}`;
+  orderReviewSubtotal.textContent = `Subtotal: ${subtotal}`;
+  orderSummarySubtotal.textContent = subtotal;
+  orderSummaryTotal.textContent = subtotal;
 }
 
-function initCheckoutCTA() {
-  const checkoutCTA = document.querySelector(".order-summary-wrapper .cta");
-  checkoutCTA.addEventListener("click", ui.clearCart);
+function showCheckoutStages() {
+  const checkoutStages = document.querySelector(".checkout-stages");
+  checkoutStages.classList.remove("hidden");
 }
 
 export function renderCart(cart) {
@@ -111,7 +131,7 @@ export function renderCart(cart) {
   let subtotal = 0;
 
   cart.forEach((product) => {
-    const productPrice = product.onSale ? product.discountedPrice : product.price;
+    const productPrice = product.prices.price / 100;
     const totalPrice = productPrice * product.quantity;
     subtotal += totalPrice;
 
@@ -120,5 +140,5 @@ export function renderCart(cart) {
   });
 
   updateSubtotal(subtotal);
-  initCheckoutCTA();
+  showCheckoutStages();
 }

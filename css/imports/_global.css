@@ -22,8 +22,6 @@ main > :not(:last-child) {
 h1,
 h2,
 h3,
-h4,
-h5,
 legend,
 strong {
   text-transform: capitalize;
@@ -41,6 +39,7 @@ p {
 
 label {
   font-weight: var(--fw-medium);
+  cursor: pointer;
 }
 
 strong {

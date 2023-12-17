@@ -12,9 +12,14 @@
   gap: 30px;
 }
 
+.product-image {
+  cursor: pointer;
+}
+
 .product-specific-content h1 {
   padding-bottom: 10px;
   font-size: 1.5rem;
+  text-align: left;
   border-bottom: var(--bd-blue);
 }
 
@@ -50,4 +55,47 @@
 
 .product-specific-content select {
   font-weight: var(--fw-medium);
+}
+
+/* ------------ Product Image Modal ----------- */
+
+.modal {
+  position: fixed;
+  display: grid;
+  inset: 0;
+  place-items: center;
+  opacity: 0;
+  backdrop-filter: blur(2px);
+  transition: opacity var(--tr-modal);
+  background-color: var(--clr-darker-shadow);
+  z-index: 3;
+}
+
+.modal-open {
+  opacity: 1;
+}
+
+.modal-content {
+  margin-inline: 20px;
+  transform: scale(0.75);
+  transition: transform var(--tr-modal);
+}
+
+.modal-open .modal-content {
+  transform: scale(1);
+}
+
+.modal-image,
+.modal-close-button {
+  display: block;
+}
+
+.modal-image {
+  max-height: 85vh;
+}
+
+.modal-close-button {
+  margin: 0 0 15px auto;
+  font-size: 2rem;
+  background-color: transparent;
 }

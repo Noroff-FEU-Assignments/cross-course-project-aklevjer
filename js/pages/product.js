@@ -8,13 +8,10 @@ export async function productPage() {
     const id = url.searchParams.get("id");
 
     const product = await api.fetchProductById(id);
-    const productTitle = utils.trimProductTitle(product.title);
-
-    utils.updatePageTitle(productTitle);
-    utils.updateMetaDescription(product.description);
+    utils.updatePageTitle(product.name);
 
     const breadcrumbsCurrent = document.querySelector(".breadcrumbs strong");
-    breadcrumbsCurrent.textContent = productTitle;
+    breadcrumbsCurrent.textContent = product.name;
 
     ui.renderProductDetails(product);
   } catch (error) {
