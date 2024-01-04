@@ -2,6 +2,30 @@
 /*                   Shop Page                  */
 /* -------------------------------------------- */
 
+/* ------------- Products Sorting ------------- */
+
+.products-info {
+  margin-bottom: 40px !important;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.products-count {
+  font-weight: var(--fw-semi-bold);
+}
+
+.sort-container label {
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+}
+
+.sort-container select {
+  margin-bottom: 0;
+}
+
 /* ----------------- Products ----------------- */
 
 .products-list {

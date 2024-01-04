@@ -29,6 +29,11 @@ function createProductItem(product, isShopPage) {
   return productItemContainer;
 }
 
+function showProductsCount(count) {
+  const productsCount = document.querySelector(".products-count");
+  productsCount.textContent = `Showing all ${count} products`;
+}
+
 export function renderProducts(products, parentElement, isShopPage) {
   utils.clearElement(parentElement);
 
@@ -36,4 +41,8 @@ export function renderProducts(products, parentElement, isShopPage) {
     const createdProduct = createProductItem(product, isShopPage);
     parentElement.append(createdProduct);
   });
+
+  if (isShopPage) {
+    showProductsCount(products.length);
+  }
 }

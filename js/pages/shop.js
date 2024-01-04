@@ -8,6 +8,7 @@ export async function shopPage() {
     const productsList = document.querySelector(".products-list");
 
     ui.renderProducts(products, productsList, true);
+    ui.initProductSorting(products, productsList);
   } catch (error) {
     console.error(error);
     ui.showErrorMessage();
